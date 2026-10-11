@@ -1,39 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://milimurcot.github.io/</loc>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/face.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/makeup.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/men.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/parfum.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/bads.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/home.html</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://milimurcot.github.io/help.html</loc>
-        <priority>0.6</priority>
-    </url>
-    <url>
-    <loc>https://milimurcot.github.io/acne.html</loc>
-    <priority>0.7</priority>
-</url>
+<url><loc>https://milimurcot.github.io/</loc></url>
+<url><loc>https://milimurcot.github.io/face.html</loc></url>
+<url><loc>https://milimurcot.github.io/makeup.html</loc></url>
+<url><loc>https://milimurcot.github.io/bads.html</loc></url>
+<url><loc>https://milimurcot.github.io/parfum.html</loc></url>
+<url><loc>https://milimurcot.github.io/men.html</loc></url>
+<url><loc>https://milimurcot.github.io/home.html</loc></url>
+<url><loc>https://milimurcot.github.io/help.html</loc></url>
+<url><loc>https://milimurcot.github.io/acne.html</loc></url>
 </urlset>
