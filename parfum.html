@@ -8,6 +8,67 @@
     <meta name="description" content="Парфюмерия Faberlic: женские и мужские ароматы, цветочные, древесные, восточные композиции. Подбор аромата от консультанта Ирины.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        .shade-modal {
+    display: none; position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); z-index: 10000;
+    justify-content: center; align-items: center;
+    padding: 20px; opacity: 0; transition: opacity 0.3s ease;
+}
+.shade-modal.open { display: flex; opacity: 1; }
+.shade-modal-content {
+    position: relative; background: #fff;
+    border-radius: 20px; padding: 15px;
+    max-width: 400px; width: 100%; text-align: center;
+    animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.shade-modal-content img {
+    width: 100%; height: auto; max-height: 60vh;
+    object-fit: contain; border-radius: 14px;
+}
+.shade-modal-content p {
+    margin: 12px 0 0 0; font-family: 'Playfair Display', serif;
+    color: #c5002b; font-size: 1.2em; font-weight: 600;
+}
+.shade-modal-close {
+    position: absolute; top: -15px; right: -15px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #c5002b; color: #fff; border: none;
+    font-size: 22px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 4px 15px rgba(197,0,43,0.5);
+    display: flex; align-items: center; justify-content: center;
+}
+        /* Список вариантов (оттенков) */
+.shade-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 15px 0;
+}
+
+/* Кнопка одного оттенка */
+.shade {
+    background: #faf8f5;
+    border: 1px solid #f0c0c8;
+    color: #c5002b;
+    font-size: 0.8em;
+    padding: 6px 14px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.shade:hover {
+    background: #c5002b;
+    color: #fff;
+    border-color: #c5002b;
+}
         html {
     scroll-behavior: smooth;
         }
@@ -508,6 +569,24 @@
         }
     }
 </script>
-
+<div id="shade-modal" class="shade-modal" onclick="closeShade(event)">
+    <div class="shade-modal-content" onclick="event.stopPropagation()">
+        <button class="shade-modal-close" onclick="closeShade(event)">×</button>
+        <img id="shade-modal-img" src="" alt="">
+        <p id="shade-modal-title"></p>
+    </div>
+</div>
+    <script>
+    function openShade(imageSrc, title) {
+        document.getElementById('shade-modal-img').src = imageSrc;
+        document.getElementById('shade-modal-title').textContent = title;
+        document.getElementById('shade-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeShade(event) {
+        document.getElementById('shade-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    </script>
 </body>
 </html>
