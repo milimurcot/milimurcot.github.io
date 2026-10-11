@@ -32,4 +32,8 @@
         <loc>https://milimurcot.github.io/help.html</loc>
         <priority>0.6</priority>
     </url>
+    <url>
+    <loc>https://milimurcot.github.io/acne.html</loc>
+    <priority>0.7</priority>
+</url>
 </urlset>
