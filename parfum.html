@@ -8,6 +8,35 @@
     <meta name="description" content="Парфюмерия Faberlic: женские и мужские ароматы, цветочные, древесные, восточные композиции. Подбор аромата от консультанта Ирины.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        html {
+    scroll-behavior: smooth;
+        }
+        /* Кнопки навигации по ароматам */
+.aroma-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 25px 20px;
+    flex-wrap: wrap;
+}
+.aroma-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1em;
+    box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3);
+    transition: 0.3s;
+    white-space: nowrap;
+}
+.aroma-btn:hover {
+    background: linear-gradient(135deg, #a00022 0%, #8a001d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 0, 43, 0.4);
+}
         * { box-sizing: border-box; }
         body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.6; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
@@ -220,6 +249,11 @@
     <h1>Парфюмерия</h1>
     <p>Аромат, который расскажет о вас больше слов</p>
 </div>
+    <!-- КНОПКИ НАВИГАЦИИ ПО АРОМАТАМ -->
+<div class="aroma-nav">
+    <a href="#women" class="aroma-btn">🌸 Женские духи</a>
+    <a href="#men" class="aroma-btn">🧔 Мужские духи</a>
+</div>
 
 <div class="container">
 
@@ -229,7 +263,7 @@
     </div>
 
     <!-- ЖЕНСКИЕ ЦВЕТОЧНЫЕ -->
-    <h2 class="subcategory">Женские цветочные</h2>
+    <h2 class="subcategory" id="women">Женские цветочные</h2>
 
     <div class="product-card">
         <div class="product-top">
@@ -343,7 +377,7 @@
     </div>
 
     <!-- МУЖСКИЕ -->
-    <h2 class="subcategory">Мужская парфюмерия</h2>
+    <h2 class="subcategory" id="men">Мужская парфюмерия</h2>
 
     <div class="product-card">
         <div class="product-top">
