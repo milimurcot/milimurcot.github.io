@@ -1,1 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уход за лицом при акне | Советы консультанта Faberlic Ирины</title>
+    <meta name="description" content="Пошаговое руководство по уходу за кожей при акне: очищение, увлажнение, сыворотки. Советы консультанта Faberlic Ирины. Подбор средств и скидка 20%.">
+    <meta name="keywords" content="уход за лицом при акне, акне, прыщи, проблемная кожа, Faberlic, консультант Ирина">
+    <link rel="icon" type="image/png" href="2471.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px;
+            background: linear-gradient(90deg, #c5002b 0%, #e63946 100%);
+            width: 0%; z-index: 9999; transition: width 0.1s ease;
+        }
+
+        #menu-btn {
+            position: fixed; top: 15px; right: 15px; width: 52px; height: 52px;
+            background-color: #c5002b; color: #fff; border: none; border-radius: 50%;
+            font-size: 24px; cursor: pointer; z-index: 1000;
+            box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4);
+            display: flex; align-items: center; justify-content: center; transition: 0.3s;
+        }
+        #menu-btn:hover { background-color: #a00022; transform: scale(1.05); }
+
+        #side-menu {
+            position: fixed; top: 0; right: -100%; width: 82%; max-width: 320px; height: 100%;
+            background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001;
+            transition: right 0.4s ease; padding: 60px 25px 25px; overflow-y: auto;
+        }
+        #side-menu.open { right: 0; }
+        #side-menu h3 { font-size: 1.3em; margin: 0 0 20px 0; text-align: center; border-bottom: 2px solid #fdf0f2; padding-bottom: 15px; }
+        #side-menu a {
+            display: block; padding: 14px 15px; margin-bottom: 8px; background: #fdf0f2;
+            color: #1a1a1a; text-decoration: none; border-radius: 10px; font-weight: 500;
+            border-left: 4px solid #c5002b; transition: 0.2s;
+        }
+        #side-menu a:hover { background: #c5002b; color: #fff; }
+        #side-menu .catalog-link {
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; font-weight: 700; text-align: center;
+        }
+        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; color: #c5002b; cursor: pointer; }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #menu-overlay.open { opacity: 1; pointer-events: auto; }
+
+        .article-hero {
+            background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%);
+            padding: 80px 20px 50px; text-align: center;
+            border-bottom: 3px solid #c5002b; position: relative; overflow: hidden;
+        }
+        .article-hero::before {
+            content: "💆‍♀️";
+            position: absolute; font-size: 10em; opacity: 0.05;
+            top: 10px; left: -20px; transform: rotate(-15deg);
+        }
+        .article-hero .category {
+            display: inline-block; background: #fdf0f2; color: #c5002b;
+            padding: 6px 16px; border-radius: 20px; font-size: 0.8em;
+            font-weight: 600; margin-bottom: 15px; position: relative;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .article-hero h1 { font-size: 1.9em; margin: 0 0 20px 0; line-height: 1.3; position: relative; }
+        .article-hero .meta {
+            color: #888; font-size: 0.85em; position: relative;
+            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
+        }
+        .article-hero .meta span { display: inline-flex; align-items: center; gap: 5px; }
+
+        .toc {
+            background: #fff; padding: 25px 22px; border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            border-left: 5px solid #c5002b; margin: 25px 0;
+        }
+        .toc h3 { margin: 0 0 15px 0; font-size: 1.15em; display: flex; align-items: center; gap: 8px; }
+        .toc ol { margin: 0; padding-left: 22px; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { color: #444; text-decoration: none; font-size: 0.95em; transition: 0.2s; }
+      .toc a:hover { color: #c5002b; padding-left: 3px; }
+
+        .article-body { background: #fff; padding: 35px 28px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin: 25px 0; }
+        .article-body p { font-size: 1em; color: #333; margin: 0 0 18px 0; }
+        .article-body h2 {
+            font-size: 1.45em; margin: 40px 0 18px 0; padding-bottom: 10px;
+            border-bottom: 2px solid #fdf0f2; scroll-margin-top: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .article-body h2 .num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 34px; height: 34px; border-radius: 50%;
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; font-family: 'Montserrat', sans-serif;
+            font-size: 0.7em; font-weight: 700; flex-shrink: 0;
+        }
+        .article-body h3 { font-size: 1.15em; margin: 25px 0 10px 0; color: #c5002b; }
+        .article-body ul, .article-body ol { padding-left: 22px; margin: 0 0 18px 0; }
+        .article-body li { font-size: 0.98em; color: #333; margin-bottom: 10px; }
+        .article-body strong { color: #c5002b; }
+
+        .tip-card {
+            background: linear-gradient(135deg, #fdf0f2 0%, #fff 100%);
+            border-left: 4px solid #c5002b;
+            padding: 18px 20px; border-radius: 12px; margin: 15px 0;
+            display: flex; gap: 14px; align-items: flex-start;
+        }
+        .tip-card .tip-icon {
+            font-size: 1.5em; flex-shrink: 0;
+            width: 42px; height: 42px; border-radius: 50%;
+            background: #fff; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 10px rgba(197, 0, 43, 0.15);
+        }
+        .tip-card .tip-text { flex: 1; }
+        .tip-card .tip-text strong { display: block; margin-bottom: 4px; color: #c5002b; }
+        .tip-card .tip-text p { margin: 0; font-size: 0.92em; color: #444; }
+
+        .warning-block {
+            background: #fff5f5; border: 2px solid #ffcccc;
+            border-radius: 14px; padding: 20px 22px; margin: 20px 0;
+        }
+        .warning-block h3 { color: #c5002b; margin-top: 0; display: flex; align-items: center; gap: 8px; }
+        .warning-block ul { margin: 0; padding-left: 22px; }
+        .warning-block li { color: #444; margin-bottom: 8px; }
+
+        .quote-block {
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; padding: 25px 28px; border-radius: 16px;
+            margin: 25px 0; position: relative;
+        }
+        .quote-block::before {
+            content: """; position: absolute; top: -10px; left: 15px;
+            font-size: 4em; color: rgba(255,255,255,0.3);
+            font-family: 'Playfair Display', serif; line-height: 1;
+        }
+        .quote-block p { color: #fff; margin: 0; font-style: italic; font-size: 1.05em; }
+        .quote-block span { display: block; margin-top: 10px; color: #fce4e7; font-size: 0.85em; font-style: normal; }
+
+        .product-picks {
+            display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0;
+        }
+        .pick-card {
+            background: #fff; border: 2px solid #fdf0f2; border-radius: 14px;
+            padding: 14px 16px; display: flex; gap: 14px; align-items: flex-start;
+            transition: 0.3s;
+        }
+        .pick-card:hover { border-color: #c5002b; transform: translateY(-2px); }
+        .pick-card .pick-img {
+            width: 100px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+            border: 1px solid #fdf0f2;
+            background-color: #fdf0f2;
+        }
+        .pick-card .pick-info { flex: 1; display: flex; flex-direction: column; }
+        .pick-card .pick-info strong {
+            display: block; color: #1a1a1a;
+            margin-bottom: 5px; font-size: 0.95em;
+            line-height: 1.3;
+        }
+        .pick-card .pick-info span {
+            font-size: 0.82em; color: #666;
+            line-height: 1.5; margin-bottom: 8px;
+        }
+        .pick-card .btn-buy {
+            display: inline-block;
+            background: #c5002b;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-top: auto;
+            transition: 0.3s;
+            box-shadow: 0 3px 10px rgba(197, 0, 43, 0.25);
+        }
+        .pick-card .btn-buy:hover {
+            background: #a00022;
+            transform: translateY(-1px);
+        }
+         .cta-block {
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; padding: 35px 25px; border-radius: 20px;
+            text-align: center; margin: 35px 0; position: relative; overflow: hidden;
+        }
+        .cta-block::before {
+            content: "✨"; position: absolute; top: -20px; right: -20px;
+            font-size: 6em; opacity: 0.1;
+        }
+        .cta-block h2 { color: #fff; margin-top: 0; font-size: 1.5em; position: relative; }
+        .cta-block p { color: #fce4e7; margin-bottom: 22px; position: relative; }
+        .cta-btn {
+            display: inline-block; background: #fff; color: #c5002b;
+            padding: 16px 32px; border-radius: 30px; text-decoration: none;
+            font-weight: 700; font-size: 1em; transition: 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative;
+        }
+        .cta-btn:hover { background: #fdf0f2; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        .nav-links {
+            display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: #c5002b; text-decoration: none; font-weight: 600;
+            font-size: 0.9em; padding: 8px 16px; border-radius: 20px;
+            background: #fff; transition: 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .back-link:hover { background: #c5002b; color: #fff; }
+
+        .author-block {
+            display: flex; align-items: center; gap: 15px;
+            background: #fff; padding: 20px; border-radius: 16px;
+            margin: 30px 0; box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+        .author-avatar {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 1.4em;
+            font-family: 'Playfair Display', serif; flex-shrink: 0;
+        }
+        .author-info strong { display: block; color: #1a1a1a; margin-bottom: 3px; }
+        .author-info span { font-size: 0.85em; color: #777; }
+
+        .next-articles {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+            margin: 30px 0;
+        }
+        .next-card {
+           background: #fff; border-radius: 14px; padding: 18px 16px;
+            text-decoration: none; color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #c5002b; transition: 0.3s;
+        }
+        .next-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(197, 0, 43, 0.15); }
+        .next-card .icon { font-size: 1.6em; display: block; margin-bottom: 8px; }
+        .next-card .title { font-weight: 600; font-size: 0.9em; }
+
+        .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; }
+        .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
+          #social-float { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
+        .social-btn:hover { transform: scale(1.1); }
+        .social-btn svg { width: 30px; height: 30px; fill: #fff; }
+        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        #telegram-float { background-color: #0088cc; }
+
+        #to-top {
+            position: fixed; bottom: 100px; left: 20px; width: 50px; height: 50px;
+            border-radius: 50%; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; border: none; font-size: 24px; font-weight: 700; cursor: pointer;
+            z-index: 998; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4);
+            display: none; align-items: center; justify-content: center; transition: 0.3s;
+        }
+        #to-top.show { display: flex; }
+        #to-top:hover { transform: translateY(-3px); }
+
+        @media (max-width: 500px) {
+            .article-hero h1 { font-size: 1.5em; }
+            .article-body { padding: 25px 20px; }
+            .next-articles { grid-template-columns: 1fr; }
+            .pick-card { padding: 12px; gap: 10px; }
+            .pick-card .pick-img { width: 80px; height: 112px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<button id="menu-btn" onclick="openMenu()">☰</button>
+<div id="menu-overlay" onclick="closeMenu()"></div>
+
+<nav id="side-menu">
+    <button id="menu-close" onclick="closeMenu()">×</button>
+    <h3>Разделы сайта</h3>
+    <a href="https://faberlic.com/by/ru/catalogs/1284?sponsornumber=744653782" target="_blank" class="catalog-link">📖 Актуальный каталог</a>
+    <a href="index.html">🏠 Главная</a>
+    <a href="face.html">💆‍♀️ Уход за лицом</a>
+    <a href="makeup.html">💄 Косметика</a>
+    <a href="men.html">🧔 Мужская линия</a>
+    <a href="parfum.html">🌸 Парфюмерия</a>
+    <a href="bads.html">💊 БАДы и здоровье</a>
+    <a href="home.html">🏠 Товары для дома</a>
+    <a href="help.html">❓ Помощь и вопросы</a>
+</nav>
+
+<div class="article-hero">
+    <span class="category">Полезные статьи</span>
+    <h1>Уход за лицом при акне: полное руководство</h1>
+    <div class="meta">
+        <span>✍️ Ирина -- консультант Faberlic</span>
+        <span>⏱ 5 минут чтения</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="nav-links">
+        <a href="index.html" class="back-link">← На главную</a>
+        <a href="face.html" class="back-link">← Уход за лицом</a>
+    </div>
+
+    <div class="toc">
+        <h3>📋 Содержание статьи</h3>
+        <ol>
+            <li><a href="#why">Почему появляется акне</a></li>
+            <li><a href="#rules">Основные правила ухода</a></li>
+            <li><a href="#no">Чего делать нельзя</a></li>
+            <li><a href="#products">Какие средства подойдут</a></li>
+            <li><a href="#doctor">Когда идти к врачу</a></li>
+        </ol>
+    </div>
+
+    <div class="article-body">
+
+        <p>Акне -- это проблема, с которой сталкиваются миллионы людей. И хотя полностью вылечить его может только врач-дерматолог, <strong>правильный ежедневный уход</strong> способен заметно улучшить состояние кожи. В этой статье я расскажу, как выстроить уход при акне и какие средства помогут.</p>
+
+        <h2 id="why"><span class="num">1</span> Почему появляется акне</h2>
+        <p>Акне возникает из-за закупорки пор кожным салом и отмершими клетками. Внутри поры начинают размножаться бактерии -- появляется воспаление. Причины могут быть разными:</p>
+        <ul>
+        <li>гормональные изменения (подростковый возраст, стресс, цикл);</li>
+            <li>неправильный уход или его отсутствие;</li>
+            <li>питание (сладкое, жирное, молочное);</li>
+            <li>наследственность.</li>
+        </ul>
+
+        <div class="quote-block">
+            <p>Акне -- это не приговор. С правильным уходом кожа становится заметно чище уже через 3–4 недели.</p>
+            <span>-- Ирина, консультант Faberlic</span>
+        </div>
+
+        <h2 id="rules"><span class="num">2</span> Основные правила ухода</h2>
+
+        <div class="tip-card">
+            <div class="tip-icon">🧼</div>
+            <div class="tip-text">
+                <strong>Очищение</strong>
+                <p>Умывайтесь дважды в день -- утром и вечером. Используйте мягкие гели без агрессивных компонентов. Не трите кожу -- это усиливает воспаление.</p>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">💧</div>
+            <div class="tip-text">
+                <strong>Тонизирование</strong>
+                <p>Тоник без спирта помогает восстановить pH кожи и подготовить её к нанесению сыворотки.</p>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🧪</div>
+            <div class="tip-text">
+                <strong>Лечение</strong>
+                <p>Сыворотки с салициловой кислотой, цинком и ниацинамидом помогают уменьшить воспаление и нормализовать выработку кожного сала.</p>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">✨</div>
+            <div class="tip-text">
+                <strong>Увлажнение</strong>
+                <p>Даже жирная кожа нуждается во влаге. Используйте лёгкие гели или эмульсии -- они не забивают поры.</p>
+            </div>
+        </div>
+
+        <h2 id="no"><span class="num">3</span> Чего делать нельзя</h2>
+        <div class="warning-block">
+            <h3>⚠️ Избегайте этих ошибок</h3>
+            <ul>
+                <li><strong>Выдавливать прыщи</strong> -- это приводит к рубцам и распространению инфекции.</li>
+                <li><strong>Использовать спиртовые лосьоны</strong> -- они пересушивают кожу и усиливают выработку сала.</li>
+                <li><strong>Мыть лицо горячей водой</strong> -- это раздражает кожу.</li>
+                <li><strong>Менять средства каждую неделю</strong> -- кожа не успевает адаптироваться.</li>
+            </ul>
+        </div>
+
+        <h2 id="products"><span class="num">4</span> Какие средства подойдут</h2>
+        <p>В каталоге Faberlic есть несколько линеек для проблемной кожи: <strong>Teen Skin</strong> (для молодой кожи), <strong>Expert Pharma Anti-Acne</strong> (космецевтика) и <strong>Ultra Clean Ultra Green</strong> (для жирной кожи). Вот лучшие средства из них:</p>
+
+        <h3>Очищение</h3>
+        <div class="product-picks">
+            <div class="pick-card">
+                <img src="images/gel-teenskin.jpg" alt="Гель для умывания TeenSkin" class="pick-img">
+                <div class="pick-info">
+                    <strong>Гель для умывания TeenSkin Deep Cleansing</strong>
+                    <span>Салициловая кислота + сок алоэ. Глубоко очищает поры, борется с прыщами и чёрными точками.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/pudra-expert.jpg" alt="SOS Очищающая пудра" class="pick-img">
+                <div class="pick-info">
+                    <strong>SOS Очищающая пудра «Анти-акне» Expert Pharma</strong>
+                    <span>Салициловая кислота + экстракт алоэ. Мягко отшелушивает, подсушивает воспаления.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/piling-expert.jpg" alt="Микропилинг Expert" class="pick-img">
+                <div class="pick-info">
+                    <strong>Микродермабразия и энзимный микропилинг Expert</strong>
+                    <span>Глубоко очищает поры, удаляет ороговевшие клетки, предотвращает акне.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/gel-3in1.jpg" alt="Гель-скраб-маска 3 в 1" class="pick-img">
+                <div class="pick-info">
+                    <strong>Гель-скраб-маска 3 в 1 Ultra Clean Ultra Green</strong>
+                    <span>Белая глина + масло мануки + салициловая кислота. Очищает, отшелушивает, борется с воспалениями.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/tonik-expert.jpg" alt="Бифазный шейк-тоник" class="pick-img">
+                <div class="pick-info">
+                    <strong>Бифазный шейк-тоник Expert Pharma Anti-Acne</strong>
+                    <span>Матирует, сужает поры, очищает от чёрных точек. Без спирта.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/losion-teenskin.jpg" alt="Лосьон TeenSkin" class="pick-img">
+                <div class="pick-info">
+                    <strong>Лосьон от чёрных точек TeenSkin Anti Blackhead</strong>
+                    <span>Ниацинамид + салициловая кислота. Очищает поры, борется с акне, не сушит кожу.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+        </div>
+        <h3>Сыворотки и уход</h3>
+        <div class="product-picks">
+            <div class="pick-card">
+                <img src="images/syvorotka-salisil.jpg" alt="Сыворотка TeenSkin" class="pick-img">
+                <div class="pick-info">
+                    <strong>Сыворотка с салициловой кислотой 2% и пантенолом TeenSkin</strong>
+                    <span>Глубоко очищает поры, отшелушивает, устраняет покраснения. Без отдушек.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/syvorotka-niacin.jpg" alt="Сыворотка Ниацинамид" class="pick-img">
+                <div class="pick-info">
+                    <strong>Сыворотка «Ниацинамид 10% + цинк» Expert Active Complex</strong>
+                    <span>Борется с акне и покраснениями, нормализует выработку себума, сужает поры.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/krem-balance.jpg" alt="Крем 2 в 1" class="pick-img">
+                <div class="pick-info">
+                    <strong>Крем для лица 2 в 1 «Баланс и устранение несовершенств»</strong>
+                    <span>Масло чёрного тмина и монарды. Уменьшает воспаления, матирует, увлажняет.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Маски</h3>
+        <div class="product-picks">
+            <div class="pick-card">
+                <img src="images/maska-antacne.jpg" alt="Крем-маска Анти-акне" class="pick-img">
+                <div class="pick-info">
+                    <strong>Крем-маска 2 в 1 «Анти-акне» Expert Pharma</strong>
+                    <span>Белая глина + оксид цинка + никотинамид. Очищает поры, матирует, снимает покраснения.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/maska-n4w.jpg" alt="Маска 4 в 1" class="pick-img">
+                <div class="pick-info">
+                    <strong>Маска очищающая 4 в 1 N4W</strong>
+                    <span>Вытяжка тасманского перца + каолин + цинк. Борется с акне, комедонами, нормализует себум.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Точечные средства</h3>
+        <div class="product-picks">
+            <div class="pick-card">
+                <img src="images/gel-korrektor.jpg" alt="SOS гель-корректор" class="pick-img">
+                <div class="pick-info">
+                    <strong>SOS гель-корректор точечного воздействия Ultra Clean Ultra Green</strong>
+                    <span>Маскирует и лечит воспаления. Масло мануки + салициловая кислота.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/krem-teenskin.jpg" alt="Крем локального действия" class="pick-img">
+                <div class="pick-info">
+                    <strong>Крем локального действия для проблемной кожи TeenSkin</strong>
+                    <span>Азелаиновая кислота. Ускоряет заживление, убирает боль и воспаление.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <img src="images/patches-activity.jpg" alt="Патчи с микроиглами" class="pick-img">
+                <div class="pick-info">
+                    <strong>Патчи с микроиглами Activity</strong>
+                    <span>Уменьшают высыпания за 8 часов, ускоряют регенерацию, сужают поры.</span>
+                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+                </div>
+            </div>
+        </div>
+
+        <p>Я помогу подобрать подходящий набор под ваш тип кожи и стадию акне. Напишите мне -- и мы вместе выберем, с чего начать.</p>
+        <h2 id="doctor"><span class="num">5</span> Когда идти к врачу</h2>
+        <p>Если акне тяжёлое, болезненное или не проходит больше 2–3 месяцев, обязательно обратитесь к дерматологу. Уход -- это поддержка, но не замена лечению.</p>
+
+    </div>
+
+    <div class="cta-block">
+        <h2>Хотите подобрать уход?</h2>
+        <p>Зарегистрируйтесь по моей ссылке и получите скидку 20% на всю продукцию Faberlic. Помогу подобрать средства именно под вашу кожу.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="cta-btn">Получить скидку 20%</a>
+    </div>
+
+    <div class="author-block">
+        <div class="author-avatar">И</div>
+        <div class="author-info">
+            <strong>Ирина</strong>
+            <span>Консультант Faberlic с опытом более 5 лет. Помогу подобрать уход и отвечу на вопросы.</span>
+        </div>
+    </div>
+
+    <h3 style="text-align:center; font-size:1.3em; margin: 35px 0 15px 0;">Читайте также</h3>
+    <div class="next-articles">
+        <a href="face.html" class="next-card">
+            <span class="icon">💆‍♀️</span>
+            <span class="title">Уход за лицом: каталог средств</span>
+        </a>
+        <a href="bads.html" class="next-card">
+            <span class="icon">💊</span>
+            <span class="title">БАДы для красоты кожи</span>
+        </a>
+        <a href="makeup.html" class="next-card">
+            <span class="icon">💄</span>
+            <span class="title">Декоративная косметика</span>
+        </a>
+        <a href="help.html" class="next-card">
+            <span class="icon">❓</span>
+            <span class="title">Как зарегистрироваться</span>
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <a href="face.html" class="back-link">← Вернуться к «Уход за лицом»</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>Связь со мной: <a href="https://instagram.com/irina.faberlic.belarus" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
+    <p>&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
+</div>
+
+<div id="social-float">
+    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float" title="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+<button id="to-top" onclick="scrollToTop()" title="Наверх">↑</button>
+
+<script>
+    function openMenu() {
+        document.getElementById('side-menu').classList.add('open');
+        document.getElementById('menu-overlay').classList.add('open');
+    }
+    function closeMenu() {
+        document.getElementById('side-menu').classList.remove('open');
+        document.getElementById('menu-overlay').classList.remove('open');
+    }
+
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+
+        const toTopBtn = document.getElementById('to-top');
+        if (winScroll > 400) { toTopBtn.classList.add('show'); }
+        else { toTopBtn.classList.remove('show'); }
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
 
