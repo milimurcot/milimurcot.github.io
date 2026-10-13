@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://milimurcot.github.io/sitemap.xml
+Sitemap: https://irina-faberlic.com/sitemap.xml
