@@ -201,17 +201,7 @@
         #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         #telegram-float { background-color: #0088cc; }
 
-        /* Кнопка «Наверх» */
-        #to-top {
-            position: fixed; bottom: 100px; left: 20px; width: 50px; height: 50px;
-            border-radius: 50%; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
-            color: #fff; border: none; font-size: 24px; font-weight: 700; cursor: pointer;
-            z-index: 998; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4);
-            display: none; align-items: center; justify-content: center; transition: 0.3s;
-        }
-        #to-top.show { display: flex; }
-        #to-top:hover { transform: translateY(-3px); }
-
+        
         /* Модальное окно */
         .shade-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
         .shade-modal.open { display: flex; opacity: 1; }
@@ -385,7 +375,6 @@
     </a>
 </div>
 
-<button id="to-top" onclick="scrollToTop()" title="Наверх">↑</button>
 
 <div id="shade-modal" class="shade-modal" onclick="closeShade(event)">
     <div class="shade-modal-content" onclick="event.stopPropagation()">
@@ -406,9 +395,6 @@
     }
 
     window.addEventListener('scroll', function() {
-        const toTopBtn = document.getElementById('to-top');
-        if (window.scrollY > 400) { toTopBtn.classList.add('show'); }
-        else { toTopBtn.classList.remove('show'); }
     });
 
     function scrollToTop() {
