@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-   <link rel="canonical" href="https://irina-faberlic.com/acne.html"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Уход за лицом при акне | Советы консультанта Faberlic Ирины</title>
     <meta name="description" content="Пошаговое руководство по уходу за кожей при акне: очищение, увлажнение, сыворотки. Советы консультанта Faberlic Ирины. Подбор средств и скидка 20%.">
     <meta name="keywords" content="уход за лицом при акне, акне, прыщи, проблемная кожа, Faberlic, консультант Ирина">
+    
+    <!-- Canonical и Open Graph -->
+    <link rel="canonical" href="https://irina-faberlic.com/acne.html">
+    <meta property="og:title" content="Уход за лицом при акне | Советы консультанта Faberlic">
+    <meta property="og:description" content="Пошаговое руководство по уходу за кожей при акне: очищение, увлажнение, сыворотки.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://irina-faberlic.com/acne.html">
+    <meta property="og:image" content="https://irina-faberlic.com/images/faberlic-preview.jpg">
+    
     <link rel="icon" type="image/png" href="2471.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
     <style>
         * { box-sizing: border-box; }
+        
+        /* ИСПРАВЛЕНИЕ: Запрет на горизонтальную прокрутку */
         html { 
-    scroll-behavior: smooth; 
-    overflow-x: hidden; /* Запрещает ездить по горизонтали */
-}
-
-body { 
-    margin: 0; 
-    font-family: 'Montserrat', sans-serif; 
-    background-color: #faf8f5; 
-    color: #1a1a1a; 
-    line-height: 1.7; 
-    overflow-x: hidden; /* Дублируем для тела страницы */
-    max-width: 100%;
-}
+            scroll-behavior: smooth; 
+            overflow-x: hidden; 
+        }
+        body { 
+            margin: 0; 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #faf8f5; 
+            color: #1a1a1a; 
+            line-height: 1.7; 
+            overflow-x: hidden; 
+            max-width: 100%;
+        }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         .container { max-width: 700px; margin: 0 auto; padding: 20px; }
 
+        /* Прогресс-бар чтения */
         #progress-bar {
             position: fixed; top: 0; left: 0; height: 4px;
             background: linear-gradient(90deg, #c5002b 0%, #e63946 100%);
             width: 0%; z-index: 9999; transition: width 0.1s ease;
         }
 
+        /* Кнопка меню */
         #menu-btn {
             position: fixed; top: 15px; right: 15px; width: 52px; height: 52px;
             background-color: #c5002b; color: #fff; border: none; border-radius: 50%;
@@ -43,6 +55,7 @@ body {
         }
         #menu-btn:hover { background-color: #a00022; transform: scale(1.05); }
 
+        /* Боковое меню */
         #side-menu {
             position: fixed; top: 0; right: -100%; width: 82%; max-width: 320px; height: 100%;
             background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001;
@@ -56,22 +69,19 @@ body {
             border-left: 4px solid #c5002b; transition: 0.2s;
         }
         #side-menu a:hover { background: #c5002b; color: #fff; }
-        #side-menu .catalog-link {
-            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
-            color: #fff; font-weight: 700; text-align: center;
-        }
+        #side-menu .catalog-link { background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; font-weight: 700; text-align: center; }
         #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; color: #c5002b; cursor: pointer; }
         #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
         #menu-overlay.open { opacity: 1; pointer-events: auto; }
 
-        .article-hero {
+        /* Заголовок статьи */
+           .article-hero {
             background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%);
             padding: 80px 20px 50px; text-align: center;
             border-bottom: 3px solid #c5002b; position: relative; overflow: hidden;
         }
         .article-hero::before {
-            content: "💆‍♀️";
-            position: absolute; font-size: 10em; opacity: 0.05;
+            content: "💆‍♀️"; position: absolute; font-size: 10em; opacity: 0.05;
             top: 10px; left: -20px; transform: rotate(-15deg);
         }
         .article-hero .category {
@@ -85,8 +95,8 @@ body {
             color: #888; font-size: 0.85em; position: relative;
             display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
         }
-        .article-hero .meta span { display: inline-flex; align-items: center; gap: 5px; }
 
+        /* Оглавление */
         .toc {
             background: #fff; padding: 25px 22px; border-radius: 18px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.06);
@@ -96,8 +106,9 @@ body {
         .toc ol { margin: 0; padding-left: 22px; }
         .toc li { margin-bottom: 8px; }
         .toc a { color: #444; text-decoration: none; font-size: 0.95em; transition: 0.2s; }
-      .toc a:hover { color: #c5002b; padding-left: 3px; }
+        .toc a:hover { color: #c5002b; padding-left: 3px; }
 
+        /* Тело статьи */
         .article-body { background: #fff; padding: 35px 28px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin: 25px 0; }
         .article-body p { font-size: 1em; color: #333; margin: 0 0 18px 0; }
         .article-body h2 {
@@ -117,6 +128,7 @@ body {
         .article-body li { font-size: 0.98em; color: #333; margin-bottom: 10px; }
         .article-body strong { color: #c5002b; }
 
+        /* Карточки советов */
         .tip-card {
             background: linear-gradient(135deg, #fdf0f2 0%, #fff 100%);
             border-left: 4px solid #c5002b;
@@ -133,6 +145,7 @@ body {
         .tip-card .tip-text strong { display: block; margin-bottom: 4px; color: #c5002b; }
         .tip-card .tip-text p { margin: 0; font-size: 0.92em; color: #444; }
 
+        /* Блок «нельзя» */
         .warning-block {
             background: #fff5f5; border: 2px solid #ffcccc;
             border-radius: 14px; padding: 20px 22px; margin: 20px 0;
@@ -141,65 +154,57 @@ body {
         .warning-block ul { margin: 0; padding-left: 22px; }
         .warning-block li { color: #444; margin-bottom: 8px; }
 
+        /* Цитата */
         .quote-block {
             background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
             color: #fff; padding: 25px 28px; border-radius: 16px;
             margin: 25px 0; position: relative;
         }
         .quote-block::before {
-            content: """; position: absolute; top: -10px; left: 15px;
+            content: "“"; position: absolute; top: -10px; left: 15px;
             font-size: 4em; color: rgba(255,255,255,0.3);
             font-family: 'Playfair Display', serif; line-height: 1;
         }
         .quote-block p { color: #fff; margin: 0; font-style: italic; font-size: 1.05em; }
         .quote-block span { display: block; margin-top: 10px; color: #fce4e7; font-size: 0.85em; font-style: normal; }
 
-        .product-picks {
-            display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0;
+        /* === НОВЫЕ КАРТОЧКИ ТОВАРОВ (КАК В МУЖСКОЙ ЛИНИИ) === */
+        .product-card {
+            background: #fff; border: 2px solid #fdf0f2; border-radius: 16px;
+            padding: 18px; margin-bottom: 18px; transition: 0.3s;
         }
-       /* Карточка товара (как в мужской линии) */
-.product-card {
-    background: #fff; border: 2px solid #fdf0f2; border-radius: 16px;
-    padding: 18px; margin-bottom: 18px; transition: 0.3s;
-}
-.product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
-
-.product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
-.product-img {
-    width: 100px; height: 140px;
-    object-fit: cover; border-radius: 10px;
-    flex-shrink: 0; border: 1px solid #fdf0f2;
-    background-color: #fdf0f2;
-}
-.product-info { flex: 1; display: flex; flex-direction: column; }
-.product-tag {
-    display: inline-block; background: #fdf0f2; color: #c5002b;
-    font-size: 0.7em; font-weight: 700; padding: 3px 10px;
-    border-radius: 10px; margin-bottom: 6px; align-self: flex-start;
-    letter-spacing: 0.5px; text-transform: uppercase;
-}
-.product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; color: #c5002b; font-family: 'Playfair Display', serif; }
-.product-info .short { font-size: 0.85em; color: #666; margin: 0; line-height: 1.4; }
-.product-desc { font-size: 0.9em; color: #444; margin: 0 0 14px 0; line-height: 1.6; }
-
-.btn-order {
-    display: inline-block; background: #c5002b; color: #fff;
-    padding: 10px 24px; font-size: 0.85em; font-weight: 600;
-    text-decoration: none; border-radius: 22px;
-    box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s;
-    align-self: flex-start;
-}
-.btn-order:hover { background: #a00022; transform: translateY(-2px); }
+        .product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
+        .product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+        .product-img {
+            width: 100px; height: 140px; object-fit: cover; border-radius: 10px;
+            flex-shrink: 0; border: 1px solid #fdf0f2; background-color: #fdf0f2;
         }
-         .cta-block {
+        .product-info { flex: 1; display: flex; flex-direction: column; }
+        .product-tag {
+            display: inline-block; background: #fdf0f2; color: #c5002b;
+            font-size: 0.7em; font-weight: 700; padding: 3px 10px;
+            border-radius: 10px; margin-bottom: 6px; align-self: flex-start;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; }
+        .product-info .short { font-size: 0.85em; color: #666; margin: 0; line-height: 1.4; }
+        .product-desc { font-size: 0.9em; color: #444; margin: 0 0 14px 0; line-height: 1.6; }
+        .btn-order {
+            display: inline-block; background: #c5002b; color: #fff;
+            padding: 10px 24px; font-size: 0.85em; font-weight: 600;
+            text-decoration: none; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s;
+            align-self: flex-start;
+        }
+        .btn-order:hover { background: #a00022; transform: translateY(-2px); }
+
+        /* CTA-блок */
+        .cta-block {
             background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
             color: #fff; padding: 35px 25px; border-radius: 20px;
             text-align: center; margin: 35px 0; position: relative; overflow: hidden;
         }
-        .cta-block::before {
-            content: "✨"; position: absolute; top: -20px; right: -20px;
-            font-size: 6em; opacity: 0.1;
-        }
+        .cta-block::before { content: "✨"; position: absolute; top: -20px; right: -20px; font-size: 6em; opacity: 0.1; }
         .cta-block h2 { color: #fff; margin-top: 0; font-size: 1.5em; position: relative; }
         .cta-block p { color: #fce4e7; margin-bottom: 22px; position: relative; }
         .cta-btn {
@@ -208,20 +213,19 @@ body {
             font-weight: 700; font-size: 1em; transition: 0.3s;
             box-shadow: 0 6px 20px rgba(0,0,0,0.15); position: relative;
         }
-        .cta-btn:hover { background: #fdf0f2; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .cta-btn:hover { background: #fdf0f2; transform: translateY(-2px); }
 
-        .nav-links {
-            display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
-        }
+        /* Навигация назад */
+        .nav-links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
         .back-link {
             display: inline-flex; align-items: center; gap: 5px;
             color: #c5002b; text-decoration: none; font-weight: 600;
             font-size: 0.9em; padding: 8px 16px; border-radius: 20px;
-            background: #fff; transition: 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: #fff; transition: 0.3s; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .back-link:hover { background: #c5002b; color: #fff; }
 
+        /* Автор */
         .author-block {
             display: flex; align-items: center; gap: 15px;
             background: #fff; padding: 20px; border-radius: 16px;
@@ -237,45 +241,42 @@ body {
         .author-info strong { display: block; color: #1a1a1a; margin-bottom: 3px; }
         .author-info span { font-size: 0.85em; color: #777; }
 
-        .next-articles {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-            margin: 30px 0;
-        }
+        /* Следующие статьи */
+        .next-articles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 30px 0; }
         .next-card {
-           background: #fff; border-radius: 14px; padding: 18px 16px;
-            text-decoration: none; color: #1a1a1a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: #fff; border-radius: 14px; padding: 18px 16px;
+            text-decoration: none; color: #1a1a1a; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-bottom: 3px solid #c5002b; transition: 0.3s;
         }
         .next-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(197, 0, 43, 0.15); }
         .next-card .icon { font-size: 1.6em; display: block; margin-bottom: 8px; }
         .next-card .title { font-weight: 600; font-size: 0.9em; }
 
+        /* Футер */
         .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; }
         .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
-          #social-float { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+
+        /* Плавающие кнопки (ИСПРАВЛЕНО: подняты выше) */
+        #social-float { 
+            position: fixed; 
+            bottom: 90px; /* Поднято, чтобы не пряталось за панелью браузера */
+            right: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            z-index: 999; 
+        }
         .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
         .social-btn:hover { transform: scale(1.1); }
         .social-btn svg { width: 30px; height: 30px; fill: #fff; }
         #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         #telegram-float { background-color: #0088cc; }
-
-        #to-top {
-            position: fixed; bottom: 100px; left: 20px; width: 50px; height: 50px;
-            border-radius: 50%; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
-            color: #fff; border: none; font-size: 24px; font-weight: 700; cursor: pointer;
-            z-index: 998; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4);
-            display: none; align-items: center; justify-content: center; transition: 0.3s;
-        }
-        #to-top.show { display: flex; }
-        #to-top:hover { transform: translateY(-3px); }
-
+            /* Мобильная адаптация */
         @media (max-width: 500px) {
             .article-hero h1 { font-size: 1.5em; }
             .article-body { padding: 25px 20px; }
             .next-articles { grid-template-columns: 1fr; }
-            .pick-card { padding: 12px; gap: 10px; }
-            .pick-card .pick-img { width: 80px; height: 112px; }
+            .product-img { width: 90px; height: 126px; }
         }
     </style>
 </head>
@@ -296,9 +297,8 @@ body {
     <a href="men.html">🧔 Мужская линия</a>
     <a href="parfum.html">🌸 Парфюмерия</a>
     <a href="bads.html">💊 БАДы и здоровье</a>
-    <a href="home.html">🏠 Товары для дома</a>
-
     <a href="kids.html">🧸 Уход за детьми</a>
+    <a href="home.html">🏠 Товары для дома</a>
     <a href="help.html">❓ Помощь и вопросы</a>
 </nav>
 
@@ -306,10 +306,17 @@ body {
     <span class="category">Полезные статьи</span>
     <h1>Уход за лицом при акне: полное руководство</h1>
     <div class="meta">
-        <span>✍️ Ирина -- консультант Faberlic</span>
+        <span>✍️ Ирина — консультант Faberlic</span>
         <span>⏱ 5 минут чтения</span>
     </div>
 </div>
+
+<div class="container">
+
+    <div class="nav-links">
+        <a href="index.html" class="back-link">← На главную</a>
+        <a href="face.html" class="back-link">← Уход за лицом</a>
+    </div>
 
     <div class="toc">
         <h3>📋 Содержание статьи</h3>
@@ -324,20 +331,20 @@ body {
 
     <div class="article-body">
 
-        <p>Акне -- это проблема, с которой сталкиваются миллионы людей. И хотя полностью вылечить его может только врач-дерматолог, <strong>правильный ежедневный уход</strong> способен заметно улучшить состояние кожи. В этой статье я расскажу, как выстроить уход при акне и какие средства помогут.</p>
+        <p>Акне — это проблема, с которой сталкиваются миллионы людей. И хотя полностью вылечить его может только врач-дерматолог, <strong>правильный ежедневный уход</strong> способен заметно улучшить состояние кожи. В этой статье я расскажу, как выстроить уход при акне и какие средства помогут.</p>
 
         <h2 id="why"><span class="num">1</span> Почему появляется акне</h2>
-        <p>Акне возникает из-за закупорки пор кожным салом и отмершими клетками. Внутри поры начинают размножаться бактерии -- появляется воспаление. Причины могут быть разными:</p>
+        <p>Акне возникает из-за закупорки пор кожным салом и отмершими клетками. Внутри поры начинают размножаться бактерии — появляется воспаление. Причины могут быть разными:</p>
         <ul>
-        <li>гормональные изменения (подростковый возраст, стресс, цикл);</li>
+            <li>гормональные изменения (подростковый возраст, стресс, цикл);</li>
             <li>неправильный уход или его отсутствие;</li>
             <li>питание (сладкое, жирное, молочное);</li>
             <li>наследственность.</li>
         </ul>
 
         <div class="quote-block">
-            <p>Акне -- это не приговор. С правильным уходом кожа становится заметно чище уже через 3–4 недели.</p>
-            <span>-- Ирина, консультант Faberlic</span>
+            <p>Акне — это не приговор. С правильным уходом кожа становится заметно чище уже через 3–4 недели.</p>
+            <span>— Ирина, консультант Faberlic</span>
         </div>
 
         <h2 id="rules"><span class="num">2</span> Основные правила ухода</h2>
@@ -346,7 +353,7 @@ body {
             <div class="tip-icon">🧼</div>
             <div class="tip-text">
                 <strong>Очищение</strong>
-                <p>Умывайтесь дважды в день -- утром и вечером. Используйте мягкие гели без агрессивных компонентов. Не трите кожу -- это усиливает воспаление.</p>
+                <p>Умывайтесь дважды в день — утром и вечером. Используйте мягкие гели без агрессивных компонентов. Не трите кожу — это усиливает воспаление.</p>
             </div>
         </div>
 
@@ -370,7 +377,7 @@ body {
             <div class="tip-icon">✨</div>
             <div class="tip-text">
                 <strong>Увлажнение</strong>
-                <p>Даже жирная кожа нуждается во влаге. Используйте лёгкие гели или эмульсии -- они не забивают поры.</p>
+                <p>Даже жирная кожа нуждается во влаге. Используйте лёгкие гели или эмульсии — они не забивают поры.</p>
             </div>
         </div>
 
@@ -378,98 +385,83 @@ body {
         <div class="warning-block">
             <h3>⚠️ Избегайте этих ошибок</h3>
             <ul>
-                <li><strong>Выдавливать прыщи</strong> -- это приводит к рубцам и распространению инфекции.</li>
-                <li><strong>Использовать спиртовые лосьоны</strong> -- они пересушивают кожу и усиливают выработку сала.</li>
-                <li><strong>Мыть лицо горячей водой</strong> -- это раздражает кожу.</li>
-                <li><strong>Менять средства каждую неделю</strong> -- кожа не успевает адаптироваться.</li>
+                <li><strong>Выдавливать прыщи</strong> — это приводит к рубцам и распространению инфекции.</li>
+                <li><strong>Использовать спиртовые лосьоны</strong> — они пересушивают кожу и усиливают выработку сала.</li>
+                <li><strong>Мыть лицо горячей водой</strong> — это раздражает кожу.</li>
+                <li><strong>Менять средства каждую неделю</strong> — кожа не успевает адаптироваться.</li>
             </ul>
         </div>
 
         <h2 id="products"><span class="num">4</span> Какие средства подойдут</h2>
-        <p>В каталоге Faberlic есть несколько линеек для проблемной кожи: <strong>Teen Skin</strong> (для молодой кожи), <strong>Expert Pharma Anti-Acne</strong> (космецевтика) и <strong>Ultra Clean Ultra Green</strong> (для жирной кожи). Вот лучшие средства из них:</p>
+        <p>В каталоге Faberlic есть несколько линеек для проблемной кожи: <strong>Teen Skin</strong>, <strong>Expert Pharma Anti-Acne</strong> и <strong>Ultra Clean Ultra Green</strong>. Вот лучшие средства из них:</p>
 
         <h3>Очищение</h3>
-        <div class="product-picks">
-            <div class="pick-card">
-                <img src="images/gel-teenskin.jpg" alt="Гель для умывания TeenSkin" class="pick-img">
-                <div class="pick-info">
-                    <strong>Гель для умывания TeenSkin Deep Cleansing</strong>
-                    <span>Салициловая кислота + сок алоэ. Глубоко очищает поры, борется с прыщами и чёрными точками.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
+        <!-- КАРТОЧКА ТОВАРА 1 -->
+        <div class="product-card">
+            <div class="product-top">
+                <img src="images/gel-teenskin.jpg" alt="Гель для умывания TeenSkin" class="product-img">
+                <div class="product-info">
+                    <span class="product-tag">Хит</span>
+                    <h3>Гель для умывания TeenSkin Deep Cleansing</h3>
+                    <p class="short">Салициловая кислота + сок алоэ</p>
                 </div>
             </div>
-            <div class="product-card">
-    <div class="product-top">
-        <!-- Обязательно проверьте путь к картинке! -->
-        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
-        <div class="product-info">
-            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
-            <!-- <span class="product-tag">Хит</span> -->
-            <h3>Название товара</h3>
-            <p class="short">Краткое описание (для кого, как принимать)</p>
+            <p class="product-desc">Глубоко очищает поры, борется с прыщами и чёрными точками. Не пересушивает кожу.</p>
+            <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
         </div>
-    </div>
-    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
-    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+
+        <!-- КАРТОЧКА ТОВАРА 2 -->
+        <div class="product-card">
+            <div class="product-top">
+                <img src="images/pudra-expert.jpg" alt="SOS Очищающая пудра" class="product-img">
+                <div class="product-info">
+                    <h3>SOS Очищающая пудра «Анти-акне»</h3>
+                    <p class="short">Expert Pharma</p>
+                </div>
             </div>
+            <p class="product-desc">Мягко отшелушивает, подсушивает воспаления. В составе салициловая кислота и экстракт алоэ.</p>
+            <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
         </div>
+
         <h3>Сыворотки и уход</h3>
-        <div class="product-card">
-    <div class="product-top">
-        <!-- Обязательно проверьте путь к картинке! -->
-        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
-        <div class="product-info">
-            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
-            <!-- <span class="product-tag">Хит</span> -->
-            <h3>Название товара</h3>
-            <p class="short">Краткое описание (для кого, как принимать)</p>
-        </div>
-    </div>
-    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
-    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
-</div>
-        <h3>Маски</h3>
-        <div class="product-card">
-    <div class="product-top">
-        <!-- Обязательно проверьте путь к картинке! -->
-        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
-        <div class="product-info">
-            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
-            <!-- <span class="product-tag">Хит</span> -->
-            <h3>Название товара</h3>
-            <p class="short">Краткое описание (для кого, как принимать)</p>
-        </div>
-    </div>
-    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
-    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
-</div>
 
-        <h3>Точечные средства</h3>
-        <div class="product-picks">
+        <!-- КАРТОЧКА ТОВАРА 3 -->
         <div class="product-card">
-    <div class="product-top">
-        <!-- Обязательно проверьте путь к картинке! -->
-        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
-        <div class="product-info">
-            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
-            <!-- <span class="product-tag">Хит</span> -->
-            <h3>Название товара</h3>
-            <p class="short">Краткое описание (для кого, как принимать)</p>
+            <div class="product-top">
+                <img src="images/syvorotka-salisil.jpg" alt="Сыворотка TeenSkin" class="product-img">
+                <div class="product-info">
+                    <span class="product-tag">Топ</span>
+                    <h3>Сыворотка с салициловой кислотой 2%</h3>
+                    <p class="short">TeenSkin</p>
+                </div>
+            </div>
+            <p class="product-desc">Глубоко очищает поры, отшелушивает, устраняет покраснения. Без отдушек.</p>
+            <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
         </div>
-    </div>
-    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
-    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
-</div>
 
-        <p>Я помогу подобрать подходящий набор под ваш тип кожи и стадию акне. Напишите мне -- и мы вместе выберем, с чего начать.</p>
+        <!-- КАРТОЧКА ТОВАРА 4 -->
+        <div class="product-card">
+            <div class="product-top">
+                <img src="images/syvorotka-niacin.jpg" alt="Сыворотка Ниацинамид" class="product-img">
+                <div class="product-info">
+                    <h3>Сыворотка «Ниацинамид 10% + цинк»</h3>
+                    <p class="short">Expert Active Complex</p>
+                </div>
+            </div>
+            <p class="product-desc">Борется с акне и покраснениями, нормализует выработку себума, сужает поры.</p>
+            <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+        </div>
+
+        <p style="margin-top:20px;">Я помогу подобрать подходящий набор под ваш тип кожи и стадию акне. Напишите мне — и мы вместе выберем, с чего начать.</p>
+
         <h2 id="doctor"><span class="num">5</span> Когда идти к врачу</h2>
-        <p>Если акне тяжёлое, болезненное или не проходит больше 2–3 месяцев, обязательно обратитесь к дерматологу. Уход -- это поддержка, но не замена лечению.</p>
+        <p>Если акне тяжёлое, болезненное или не проходит больше 2–3 месяцев, обязательно обратитесь к дерматологу. Уход — это поддержка, но не замена лечению.</p>
 
     </div>
 
     <div class="cta-block">
         <h2>Хотите подобрать уход?</h2>
-        <p>Зарегистрируйтесь по моей ссылке и получите скидку 20% на всю продукцию Faberlic. Помогу подобрать средства именно под вашу кожу.</p>
+        <p>Зарегистрируйтесь по моей ссылке и получите скидку 20% на всю продукцию Faberlic.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="cta-btn">Получить скидку 20%</a>
     </div>
 
@@ -485,7 +477,7 @@ body {
     <div class="next-articles">
         <a href="face.html" class="next-card">
             <span class="icon">💆‍♀️</span>
-            <span class="title">Уход за лицом: каталог средств</span>
+            <span class="title">Уход за лицом: каталог</span>
         </a>
         <a href="bads.html" class="next-card">
             <span class="icon">💊</span>
@@ -507,7 +499,6 @@ body {
     <p>Связь со мной: <a href="https://instagram.com/irina.faberlic.belarus" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
     <p>&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
 </div>
-
 <div id="social-float">
     <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -516,6 +507,7 @@ body {
         <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     </a>
 </div>
+
 <button id="to-top" onclick="scrollToTop()" title="Наверх">↑</button>
 
 <script>
@@ -528,6 +520,7 @@ body {
         document.getElementById('menu-overlay').classList.remove('open');
     }
 
+    // Прогресс-бар чтения и кнопка "Наверх"
     window.addEventListener('scroll', function() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -546,4 +539,3 @@ body {
 
 </body>
 </html>
-
