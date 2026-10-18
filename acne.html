@@ -145,48 +145,39 @@
         .product-picks {
             display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0;
         }
-        .pick-card {
-            background: #fff; border: 2px solid #fdf0f2; border-radius: 14px;
-            padding: 14px 16px; display: flex; gap: 14px; align-items: flex-start;
-            transition: 0.3s;
-        }
-        .pick-card:hover { border-color: #c5002b; transform: translateY(-2px); }
-        .pick-card .pick-img {
-            width: 100px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 10px;
-            flex-shrink: 0;
-            border: 1px solid #fdf0f2;
-            background-color: #fdf0f2;
-        }
-        .pick-card .pick-info { flex: 1; display: flex; flex-direction: column; }
-        .pick-card .pick-info strong {
-            display: block; color: #1a1a1a;
-            margin-bottom: 5px; font-size: 0.95em;
-            line-height: 1.3;
-        }
-        .pick-card .pick-info span {
-            font-size: 0.82em; color: #666;
-            line-height: 1.5; margin-bottom: 8px;
-        }
-        .pick-card .btn-buy {
-            display: inline-block;
-            background: #c5002b;
-            color: #fff;
-            padding: 8px 18px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.8em;
-            font-weight: 600;
-            align-self: flex-start;
-            margin-top: auto;
-            transition: 0.3s;
-            box-shadow: 0 3px 10px rgba(197, 0, 43, 0.25);
-        }
-        .pick-card .btn-buy:hover {
-            background: #a00022;
-            transform: translateY(-1px);
+       /* Карточка товара (как в мужской линии) */
+.product-card {
+    background: #fff; border: 2px solid #fdf0f2; border-radius: 16px;
+    padding: 18px; margin-bottom: 18px; transition: 0.3s;
+}
+.product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
+
+.product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+.product-img {
+    width: 100px; height: 140px;
+    object-fit: cover; border-radius: 10px;
+    flex-shrink: 0; border: 1px solid #fdf0f2;
+    background-color: #fdf0f2;
+}
+.product-info { flex: 1; display: flex; flex-direction: column; }
+.product-tag {
+    display: inline-block; background: #fdf0f2; color: #c5002b;
+    font-size: 0.7em; font-weight: 700; padding: 3px 10px;
+    border-radius: 10px; margin-bottom: 6px; align-self: flex-start;
+    letter-spacing: 0.5px; text-transform: uppercase;
+}
+.product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; color: #c5002b; font-family: 'Playfair Display', serif; }
+.product-info .short { font-size: 0.85em; color: #666; margin: 0; line-height: 1.4; }
+.product-desc { font-size: 0.9em; color: #444; margin: 0 0 14px 0; line-height: 1.6; }
+
+.btn-order {
+    display: inline-block; background: #c5002b; color: #fff;
+    padding: 10px 24px; font-size: 0.85em; font-weight: 600;
+    text-decoration: none; border-radius: 22px;
+    box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s;
+    align-self: flex-start;
+}
+.btn-order:hover { background: #a00022; transform: translateY(-2px); }
         }
          .cta-block {
             background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
@@ -308,13 +299,6 @@
     </div>
 </div>
 
-<div class="container">
-
-    <div class="nav-links">
-        <a href="index.html" class="back-link">← На главную</a>
-        <a href="face.html" class="back-link">← Уход за лицом</a>
-    </div>
-
     <div class="toc">
         <h3>📋 Содержание статьи</h3>
         <ol>
@@ -402,122 +386,68 @@
                     <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
                 </div>
             </div>
-            <div class="pick-card">
-                <img src="images/pudra-expert.jpg" alt="SOS Очищающая пудра" class="pick-img">
-                <div class="pick-info">
-                    <strong>SOS Очищающая пудра «Анти-акне» Expert Pharma</strong>
-                    <span>Салициловая кислота + экстракт алоэ. Мягко отшелушивает, подсушивает воспаления.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/piling-expert.jpg" alt="Микропилинг Expert" class="pick-img">
-                <div class="pick-info">
-                    <strong>Микродермабразия и энзимный микропилинг Expert</strong>
-                    <span>Глубоко очищает поры, удаляет ороговевшие клетки, предотвращает акне.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/gel-3in1.jpg" alt="Гель-скраб-маска 3 в 1" class="pick-img">
-                <div class="pick-info">
-                    <strong>Гель-скраб-маска 3 в 1 Ultra Clean Ultra Green</strong>
-                    <span>Белая глина + масло мануки + салициловая кислота. Очищает, отшелушивает, борется с воспалениями.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/tonik-expert.jpg" alt="Бифазный шейк-тоник" class="pick-img">
-                <div class="pick-info">
-                    <strong>Бифазный шейк-тоник Expert Pharma Anti-Acne</strong>
-                    <span>Матирует, сужает поры, очищает от чёрных точек. Без спирта.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/losion-teenskin.jpg" alt="Лосьон TeenSkin" class="pick-img">
-                <div class="pick-info">
-                    <strong>Лосьон от чёрных точек TeenSkin Anti Blackhead</strong>
-                    <span>Ниацинамид + салициловая кислота. Очищает поры, борется с акне, не сушит кожу.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
+            <div class="product-card">
+    <div class="product-top">
+        <!-- Обязательно проверьте путь к картинке! -->
+        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
+        <div class="product-info">
+            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
+            <!-- <span class="product-tag">Хит</span> -->
+            <h3>Название товара</h3>
+            <p class="short">Краткое описание (для кого, как принимать)</p>
+        </div>
+    </div>
+    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
+    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
             </div>
         </div>
         <h3>Сыворотки и уход</h3>
-        <div class="product-picks">
-            <div class="pick-card">
-                <img src="images/syvorotka-salisil.jpg" alt="Сыворотка TeenSkin" class="pick-img">
-                <div class="pick-info">
-                    <strong>Сыворотка с салициловой кислотой 2% и пантенолом TeenSkin</strong>
-                    <span>Глубоко очищает поры, отшелушивает, устраняет покраснения. Без отдушек.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/syvorotka-niacin.jpg" alt="Сыворотка Ниацинамид" class="pick-img">
-                <div class="pick-info">
-                    <strong>Сыворотка «Ниацинамид 10% + цинк» Expert Active Complex</strong>
-                    <span>Борется с акне и покраснениями, нормализует выработку себума, сужает поры.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/krem-balance.jpg" alt="Крем 2 в 1" class="pick-img">
-                <div class="pick-info">
-                    <strong>Крем для лица 2 в 1 «Баланс и устранение несовершенств»</strong>
-                    <span>Масло чёрного тмина и монарды. Уменьшает воспаления, матирует, увлажняет.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
+        <div class="product-card">
+    <div class="product-top">
+        <!-- Обязательно проверьте путь к картинке! -->
+        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
+        <div class="product-info">
+            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
+            <!-- <span class="product-tag">Хит</span> -->
+            <h3>Название товара</h3>
+            <p class="short">Краткое описание (для кого, как принимать)</p>
         </div>
-
+    </div>
+    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
+    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+</div>
         <h3>Маски</h3>
-        <div class="product-picks">
-            <div class="pick-card">
-                <img src="images/maska-antacne.jpg" alt="Крем-маска Анти-акне" class="pick-img">
-                <div class="pick-info">
-                    <strong>Крем-маска 2 в 1 «Анти-акне» Expert Pharma</strong>
-                    <span>Белая глина + оксид цинка + никотинамид. Очищает поры, матирует, снимает покраснения.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/maska-n4w.jpg" alt="Маска 4 в 1" class="pick-img">
-                <div class="pick-info">
-                    <strong>Маска очищающая 4 в 1 N4W</strong>
-                    <span>Вытяжка тасманского перца + каолин + цинк. Борется с акне, комедонами, нормализует себум.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
+        <div class="product-card">
+    <div class="product-top">
+        <!-- Обязательно проверьте путь к картинке! -->
+        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
+        <div class="product-info">
+            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
+            <!-- <span class="product-tag">Хит</span> -->
+            <h3>Название товара</h3>
+            <p class="short">Краткое описание (для кого, как принимать)</p>
         </div>
+    </div>
+    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
+    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+</div>
 
         <h3>Точечные средства</h3>
         <div class="product-picks">
-            <div class="pick-card">
-                <img src="images/gel-korrektor.jpg" alt="SOS гель-корректор" class="pick-img">
-                <div class="pick-info">
-                    <strong>SOS гель-корректор точечного воздействия Ultra Clean Ultra Green</strong>
-                    <span>Маскирует и лечит воспаления. Масло мануки + салициловая кислота.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/krem-teenskin.jpg" alt="Крем локального действия" class="pick-img">
-                <div class="pick-info">
-                    <strong>Крем локального действия для проблемной кожи TeenSkin</strong>
-                    <span>Азелаиновая кислота. Ускоряет заживление, убирает боль и воспаление.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
-            <div class="pick-card">
-                <img src="images/patches-activity.jpg" alt="Патчи с микроиглами" class="pick-img">
-                <div class="pick-info">
-                    <strong>Патчи с микроиглами Activity</strong>
-                    <span>Уменьшают высыпания за 8 часов, ускоряют регенерацию, сужают поры.</span>
-                    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-buy">Заказать</a>
-                </div>
-            </div>
+        <div class="product-card">
+    <div class="product-top">
+        <!-- Обязательно проверьте путь к картинке! -->
+        <img src="images/ВАШЕ_ФОТО.jpg" alt="Название товара" class="product-img">
+        <div class="product-info">
+            <!-- Если нужна плашка Хит, раскомментируйте строку ниже -->
+            <!-- <span class="product-tag">Хит</span> -->
+            <h3>Название товара</h3>
+            <p class="short">Краткое описание (для кого, как принимать)</p>
         </div>
+    </div>
+    <p class="product-desc">Полное описание товара. Здесь можно написать состав, свойства и рекомендации.</p>
+    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+</div>
 
         <p>Я помогу подобрать подходящий набор под ваш тип кожи и стадию акне. Напишите мне -- и мы вместе выберем, с чего начать.</p>
         <h2 id="doctor"><span class="num">5</span> Когда идти к врачу</h2>
