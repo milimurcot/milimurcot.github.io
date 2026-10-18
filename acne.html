@@ -11,8 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; }
+        html { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; /* Запрещает ездить по горизонтали */
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #faf8f5; 
+    color: #1a1a1a; 
+    line-height: 1.7; 
+    overflow-x: hidden; /* Дублируем для тела страницы */
+    max-width: 100%;
+}
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         .container { max-width: 700px; margin: 0 auto; padding: 20px; }
 
@@ -487,10 +499,6 @@
             <span class="icon">❓</span>
             <span class="title">Как зарегистрироваться</span>
         </a>
-    </div>
-
-    <div class="nav-links">
-        <a href="face.html" class="back-link">← Вернуться к «Уход за лицом»</a>
     </div>
 
 </div>
