@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уход за детьми | Ирина — консультант Faberlic</title>
+    <meta name="description" content="Детская линия Faberlic: безопасные средства для купания, ухода за нежной кожей и укрепления иммунитета. Подбор от консультанта Ирины. Скидка 20%.">
+    <meta name="keywords" content="детская косметика Faberlic, уход за ребенком, детский крем, шампунь без слез, витамины для детей, консультант Ирина">
+    
+    <!-- Canonical и Open Graph -->
+    <link rel="canonical" href="https://irina-faberlic.com/kids.html">
+    <meta property="og:title" content="Уход за детьми | Faberlic">
+    <meta property="og:description" content="Безопасные средства для детей от Faberlic. Подбор от консультанта Ирины.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://irina-faberlic.com/kids.html">
+    <meta property="og:image" content="https://irina-faberlic.com/images/faberlic-preview.jpg">
+    
+    <link rel="icon" type="image/png" href="2471.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+
+        /* Кнопка меню */
+        #menu-btn {
+            position: fixed; top: 15px; right: 15px; width: 52px; height: 52px;
+            background-color: #c5002b; color: #fff; border: none; border-radius: 50%;
+            font-size: 24px; cursor: pointer; z-index: 1000;
+            box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4);
+            display: flex; align-items: center; justify-content: center; transition: 0.3s;
+        }
+        #menu-btn:hover { background-color: #a00022; transform: scale(1.05); }
+
+        /* Боковое меню */
+        #side-menu {
+            position: fixed; top: 0; right: -100%; width: 82%; max-width: 320px; height: 100%;
+            background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001;
+            transition: right 0.4s ease; padding: 60px 25px 25px; overflow-y: auto;
+        }
+        #side-menu.open { right: 0; }
+        #side-menu h3 { font-size: 1.3em; margin: 0 0 20px 0; text-align: center; border-bottom: 2px solid #fdf0f2; padding-bottom: 15px; }
+        #side-menu a {
+            display: block; padding: 14px 15px; margin-bottom: 8px; background: #fdf0f2;
+            color: #1a1a1a; text-decoration: none; border-radius: 10px; font-weight: 500;
+            border-left: 4px solid #c5002b; transition: 0.2s;
+        }
+        #side-menu a:hover { background: #c5002b; color: #fff; }
+        #side-menu .catalog-link {
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; font-weight: 700; text-align: center;
+        }
+        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; color: #c5002b; cursor: pointer; }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #menu-overlay.open { opacity: 1; pointer-events: auto; }
+
+        /* Заголовок страницы */
+        .page-hero {
+            background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%);
+            padding: 80px 20px 45px; text-align: center;
+            border-bottom: 3px solid #c5002b; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: "🧸";
+            position: absolute; font-size: 10em; opacity: 0.05;
+            top: 10px; left: -20px; transform: rotate(-15deg);
+        }
+        .page-hero h1 { font-size: 2em; margin: 0 0 12px 0; position: relative; }
+        .page-hero p { color: #555; margin: 0; font-size: 1em; position: relative; }
+
+        /* Интро-блок */
+        .intro-block {
+            background: #fff; padding: 25px 22px; border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            border-left: 5px solid #c5002b;
+            margin: 25px 0; text-align: left;
+        }
+        .intro-block p { margin: 0 0 12px 0; font-size: 0.95em; color: #444; }
+        .intro-block p:last-child { margin-bottom: 0; }
+        .intro-block strong { color: #c5002b; }
+
+        /* Подкатегории */
+           .subcategory {
+            text-align: center; font-size: 1.4em;
+            margin: 45px 0 20px 0; padding-bottom: 12px;
+            border-bottom: 2px solid #fdf0f2;
+            scroll-margin-top: 20px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .subcategory .icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; font-size: 0.85em; flex-shrink: 0;
+        }
+
+        /* Карточка товара */
+        .product-card {
+            background: #fff; border: 2px solid #fdf0f2; border-radius: 16px;
+            padding: 18px; margin-bottom: 18px; transition: 0.3s;
+        }
+        .product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
+
+        .product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+        .product-img {
+            width: 100px; height: 140px;
+            object-fit: cover; border-radius: 10px;
+            flex-shrink: 0; border: 1px solid #fdf0f2;
+            background-color: #fdf0f2;
+        }
+        .product-info { flex: 1; display: flex; flex-direction: column; }
+        .product-tag {
+            display: inline-block; background: #fdf0f2; color: #c5002b;
+            font-size: 0.7em; font-weight: 700; padding: 3px 10px;
+            border-radius: 10px; margin-bottom: 6px; align-self: flex-start;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; }
+        .product-info .short { font-size: 0.85em; color: #666; margin: 0; line-height: 1.4; }
+        .product-desc { font-size: 0.9em; color: #444; margin: 0 0 14px 0; line-height: 1.6; }
+
+        /* Кнопки вариантов */
+        .shade-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 15px 0; }
+        .shade {
+            background: #faf8f5; border: 1px solid #f0c0c8; color: #c5002b;
+            font-size: 0.8em; padding: 6px 14px; border-radius: 14px;
+            cursor: pointer; transition: 0.3s; display: inline-block; white-space: nowrap;
+        }
+        .shade:hover { background: #c5002b; color: #fff; border-color: #c5002b; }
+
+        .btn-order {
+            display: inline-block; background: #c5002b; color: #fff;
+            padding: 10px 24px; font-size: 0.85em; font-weight: 600;
+            text-decoration: none; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s;
+            align-self: flex-start;
+        }
+        .btn-order:hover { background: #a00022; transform: translateY(-2px); }
+
+        /* Советы */
+        .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .tip-card {
+            background: #fff; border-radius: 14px; padding: 18px 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #c5002b; text-align: center;
+        }
+        .tip-card .icon { font-size: 1.8em; display: block; margin-bottom: 6px; }
+        .tip-card .title { font-weight: 600; font-size: 0.88em; color: #1a1a1a; margin-bottom: 4px; }
+        .tip-card .text { font-size: 0.76em; color: #666; line-height: 1.4; }
+
+        /* Отзывы */
+        .testimonial {
+            background: #fdf0f2; padding: 20px; border-radius: 15px;
+            margin-bottom: 14px; border-left: 4px solid #c5002b; font-style: italic;
+        }
+        .testimonial p { margin: 0 0 8px 0; color: #333; font-size: 0.95em; }
+        .testimonial span { font-size: 0.82em; color: #777; font-style: normal; font-weight: 600; }
+
+        /* Подписка */
+          .subscribe-block {
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; padding: 35px 22px; border-radius: 20px;
+            text-align: center; margin: 35px 0; position: relative; overflow: hidden;
+        }
+        .subscribe-block h2 { color: #fff; margin-top: 0; font-size: 1.4em; }
+        .subscribe-block p { color: #fce4e7; margin-bottom: 22px; }
+        .subscribe-block .btn {
+            display: inline-block; background: #fff; color: #c5002b;
+            padding: 15px 30px; font-size: 0.95em; font-weight: 700;
+            text-decoration: none; border-radius: 30px; transition: 0.3s;
+        }
+        .subscribe-block .btn:hover { background: #fdf0f2; transform: translateY(-2px); }
+
+        /* Автор */
+        .author-block {
+            display: flex; align-items: center; gap: 15px;
+            background: #fff; padding: 20px; border-radius: 16px;
+            margin: 25px 0; box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+        .author-avatar {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 1.4em;
+            font-family: 'Playfair Display', serif; flex-shrink: 0;
+        }
+        .author-info strong { display: block; color: #1a1a1a; margin-bottom: 3px; }
+        .author-info span { font-size: 0.85em; color: #777; line-height: 1.4; }
+
+        /* Футер */
+        .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; }
+        .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
+
+        /* Плавающие кнопки */
+        #social-float { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
+        .social-btn:hover { transform: scale(1.1); }
+        .social-btn svg { width: 30px; height: 30px; fill: #fff; }
+        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        #telegram-float { background-color: #0088cc; }
+
+        /* Кнопка «Наверх» */
+        #to-top {
+            position: fixed; bottom: 100px; left: 20px; width: 50px; height: 50px;
+            border-radius: 50%; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; border: none; font-size: 24px; font-weight: 700; cursor: pointer;
+            z-index: 998; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4);
+            display: none; align-items: center; justify-content: center; transition: 0.3s;
+        }
+        #to-top.show { display: flex; }
+        #to-top:hover { transform: translateY(-3px); }
+
+        /* Модальное окно */
+        .shade-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
+        .shade-modal.open { display: flex; opacity: 1; }
+        .shade-modal-content { position: relative; background: #fff; border-radius: 20px; padding: 15px; max-width: 400px; width: 100%; text-align: center; animation: zoomIn 0.3s ease; }
+        @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .shade-modal-content img { width: 100%; height: auto; max-height: 60vh; object-fit: contain; border-radius: 14px; }
+        .shade-modal-content p { margin: 12px 0 0 0; font-family: 'Playfair Display', serif; color: #c5002b; font-size: 1.2em; font-weight: 600; }
+        .shade-modal-close { position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; border-radius: 50%; background: #c5002b; color: #fff; border: none; font-size: 22px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 15px rgba(197,0,43,0.5); display: flex; align-items: center; justify-content: center; }
+
+        @media (max-width: 500px) {
+            .product-img { width: 90px; height: 126px; }
+            .page-hero h1 { font-size: 1.55em; }
+        }
+    </style>
+</head>
+<body>
+
+<button id="menu-btn" onclick="openMenu()">☰</button>
+<div id="menu-overlay" onclick="closeMenu()"></div>
+
+<nav id="side-menu">
+    <button id="menu-close" onclick="closeMenu()">×</button>
+    <h3>Разделы сайта</h3>
+    <a href="https://faberlic.com/by/ru/catalogs/1284?sponsornumber=744653782" target="_blank" class="catalog-link">📖 Актуальный каталог</a>
+    <a href="index.html">🏠 Главная</a>
+    <a href="face.html">💆‍♀️ Уход за лицом</a>
+    <a href="makeup.html">💄 Косметика</a>
+    <a href="men.html">🧔 Мужская линия</a>
+    <a href="parfum.html">🌸 Парфюмерия</a>
+    <a href="bads.html">💊 БАДы и здоровье</a>
+    <a href="kids.html">🧸 Уход за детьми</a>
+    <a href="home.html">🏠 Товары для дома</a>
+    <a href="help.html">❓ Помощь и вопросы</a>
+</nav>
+
+<div class="page-hero">
+    <h1>Уход за детьми</h1>
+    <p>Безопасные и нежные средства для самых маленьких</p>
+</div>
+
+<div class="container">
+
+    <div class="intro-block">
+        <p>Кожа ребенка требует особого, бережного ухода. В детской линии Faberlic собраны <strong>гипоаллергенные средства без слез и агрессивных компонентов</strong>, которые прошли дерматологический контроль.</p>
+        <p>Здесь вы найдете всё необходимое для купания, увлажнения и защиты нежной кожи вашего малыша. Если сомневаетесь в выборе — напишите мне, я помогу!</p>
+    </div>
+
+    <!-- КУПАНИЕ -->
+    <h2 class="subcategory"><span class="icon">🛁</span>Купание и гигиена</h2>
+
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/kids-shampoo.jpg" alt="Детский шампунь" class="product-img">
+            <div class="product-info">
+                <span class="product-tag">Хит продаж</span>
+                <h3>Детский шампунь «Без слез»</h3>
+                <p class="short">Мягкое очищение волос</p>
+            </div>
+        </div>
+        <p class="product-desc">Ультрамягкая формула с экстрактом ромашки. Не щиплет глазки, легко смывается и не путает волосы. Подходит для ежедневного использования с первых дней жизни.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/kids-gel.jpg" alt="Гель для душа детский" class="product-img">
+            <div class="product-info">
+                <h3>Мягкий гель для душа</h3>
+                <p class="short">Для тела и волос</p>
+            </div>
+        </div>
+        <p class="product-desc">Содержит натуральные масла, которые бережно очищают и увлажняют кожу ребенка. Не содержит мыла и сульфатов. Идеален для вечерних водных процедур.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+    </div>
+
+    <!-- УХОД ЗА КОЖЕЙ -->
+  <h2 class="subcategory"><span class="icon">👶</span>Уход за кожей</h2>
+
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/kids-cream.jpg" alt="Детский крем" class="product-img">
+            <div class="product-info">
+                <span class="product-tag">Топ</span>
+                <h3>Защитный детский крем</h3>
+                <p class="short">От сухости и покраснений</p>
+            </div>
+        </div>
+        <p class="product-desc">Интенсивно питает и защищает нежную кожу от ветра и холода. В составе — пантенол и масло ши. Быстро впитывается, не оставляя жирной пленки.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/kids-powder.jpg" alt="Присыпка" class="product-img">
+            <div class="product-info">
+                <h3>Крем под подгузник</h3>
+                <p class="short">Защита от опрелостей</p>
+            </div>
+        </div>
+        <p class="product-desc">Создает защитный барьер и успокаивает раздраженную кожу. Содержит оксид цинка и натуральные экстракты. Рекомендуется для ежедневного применения.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать</a>
+    </div>
+
+    <!-- СОВЕТЫ -->
+    <h2 class="subcategory"><span class="icon">📋</span>Советы для мам</h2>
+    <div class="tips-grid">
+        <div class="tip-card">
+            <span class="icon">🌡️</span>
+            <span class="title">Температура</span>
+            <span class="text">Купайте ребенка при 37°C</span>
+        </div>
+        <div class="tip-card">
+            <span class="icon">🧴</span>
+            <span class="title">Увлажнение</span>
+            <span class="text">Наносите крем после купания</span>
+        </div>
+        <div class="tip-card">
+            <span class="icon">🌿</span>
+            <span class="title">Состав</span>
+            <span class="text">Выбирайте средства без ароматизаторов</span>
+        </div>
+        <div class="tip-card">
+            <span class="icon">☀️</span>
+            <span class="title">Прогулки</span>
+            <span class="text">Защищайте кожу от солнца</span>
+        </div>
+    </div>
+
+    <!-- ОТЗЫВЫ -->
+    <h2 class="subcategory"><span class="icon">💬</span>Отзывы мам</h2>
+
+    <div class="testimonial">
+        <p>«Шампунь просто супер! Дочка наконец-то перестала плакать при мытье головы. Волосики мягкие и послушные.»</p>
+        <span>— Мария, 29 лет</span>
+    </div>
+    <div class="testimonial">
+        <p>«Крем под подгузник спасает нас от любых покраснений. Наносится легко, запах нейтральный, сыну подходит.»</p>
+        <span>— Екатерина, 32 года</span>
+    </div>
+
+    <!-- АВТОР -->
+    <div class="author-block">
+        <div class="author-avatar">И</div>
+        <div class="author-info">
+            <strong>Ирина</strong>
+            <span>Сама мама, поэтому знаю, как важен безопасный уход. Помогу подобрать средства для вашего малыша.</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- ПОДПИСКА -->
+  <div class="subscribe-block">
+    <h2>Нужна помощь с выбором?</h2>
+    <p>Напишите мне — подберу детскую косметику под возраст и особенности кожи вашего ребенка.</p>
+    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn">Зарегистрироваться и получить скидку 20%</a>
+</div>
+
+<div class="footer">
+    <p>Связь со мной: <a href="https://instagram.com/irina.faberlic.belarus" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
+    <p>&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
+</div>
+
+<div id="social-float">
+    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float" title="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+
+<button id="to-top" onclick="scrollToTop()" title="Наверх">↑</button>
+
+<div id="shade-modal" class="shade-modal" onclick="closeShade(event)">
+    <div class="shade-modal-content" onclick="event.stopPropagation()">
+        <button class="shade-modal-close" onclick="closeShade(event)">×</button>
+        <img id="shade-modal-img" src="" alt="">
+        <p id="shade-modal-title"></p>
+    </div>
+</div>
+
+<script>
+    function openMenu() {
+        document.getElementById('side-menu').classList.add('open');
+        document.getElementById('menu-overlay').classList.add('open');
+    }
+    function closeMenu() {
+        document.getElementById('side-menu').classList.remove('open');
+        document.getElementById('menu-overlay').classList.remove('open');
+    }
+
+    window.addEventListener('scroll', function() {
+        const toTopBtn = document.getElementById('to-top');
+        if (window.scrollY > 400) { toTopBtn.classList.add('show'); }
+        else { toTopBtn.classList.remove('show'); }
+    });
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Модальное окно для вариантов (если добавите кнопки .shade)
+    function openShade(imageSrc, title) {
+        document.getElementById('shade-modal-img').src = imageSrc;
+        document.getElementById('shade-modal-title').textContent = title;
+        document.getElementById('shade-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeShade(event) {
+        document.getElementById('shade-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+</script>
+
+</body>
+</html>
