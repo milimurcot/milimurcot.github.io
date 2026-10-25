@@ -192,7 +192,10 @@
         .category-card .icon { font-size: 2em; display: block; margin-bottom: 8px; }
         .category-card .name { font-weight: 600; font-size: 0.95em; }
         .category-card .desc { font-size: 0.75em; color: #777; margin-top: 5px; display: block; }
-
+        /* Стиль для длинной карточки */
+.category-card.wide {
+    grid-column: 1 / -1; /* Заставляет карточку растянуться на 2 колонки */
+}
         .testimonial {
             background: #fdf0f2; padding: 20px; border-radius: 15px; margin-bottom: 15px;
             border-left: 4px solid #c5002b; font-style: italic;
@@ -329,11 +332,6 @@
 <div class="container section" style="padding-top:0;">
     <h2 class="section-title">Вся продукция Faberlic</h2>
     <div class="categories-grid">
-        <a href="face.html" class="category-card">
-            <span class="icon">💆‍♀️</span>
-            <span class="name">Уход за лицом</span>
-            <span class="desc">Кремы, сыворотки, маски</span>
-        </a>
         <a href="makeup.html" class="category-card">
             <span class="icon">💄</span>
             <span class="name">Косметика</span>
@@ -359,30 +357,26 @@
             <span class="name">Товары для дома</span>
             <span class="desc">Химия, посуда, аксессуары</span>
         </a>
-       <a href="kids.html" class="category-card">
-    <span class="icon">🧸</span>
-    <span class="name">Уход за детьми</span>
-    <span class="desc">Шампуни, кремы, гигиена</span>
-       </a>
     <a href="help.html" class="category-card">
     <span class="icon">❓</span>
     <span class="name">Помощь и вопросы</span>
     <span class="desc">Доставка, оплата, FAQ</span>
     </a>
-       <a href="acne.html" class="category-card">
-    <span class="icon">🩺</span>
-    <span class="name">Уход при акне</span>
-    <span class="desc">Советы и подбор средств</span>
-       </a>
-       <a href="partners.html" class="category-card" style="border-bottom-color:#28a745;">
-    <span class="icon">🚀</span>
-    <span class="name">Стать партнёром</span>
-    <span class="desc">Бизнес и заработок</span>
-       </a>
-       <a href="winter.html" class="category-card" style="border-bottom-color:#00796b;">
-    <span class="icon">❄️</span>
-    <span class="name">Уход зимой</span>
-    <span class="desc">Советы для кожи</span>
+       <!-- ДЛИННАЯ КАРТОЧКА ПАРТНЕРАМ -->
+<a href="partners.html" class="category-card wide" style="border-bottom-color:#28a745; background: #1a1a1a; color: #fff; flex-direction: row; justify-content: space-between; padding: 20px 30px; text-align: left;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <span class="icon" style="margin: 0; font-size: 2.5em;">🚀</span>
+        <div>
+            <span class="name" style="font-size: 1.1em; display: block;">Стать партнёром</span>
+            <span class="desc" style="color: #ccc; font-size: 0.85em;">Бизнес и заработок без вложений</span>
+        </div>
+    </div>
+    <span style="font-size: 1.5em; color: #fff;">→</span>
+</a>
+       <a href="care.html" class="category-card">
+    <span class="icon">✨</span>
+    <span class="name">Уход за кожей</span>
+    <span class="desc">Детская, лицо, тело</span>
        </a>
     </div>
 </div>
