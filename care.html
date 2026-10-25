@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вся продукция для ухода | Faberlic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background: #faf8f5; color: #1a1a1a; line-height: 1.6; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: #c5002b; text-align: center; margin-bottom: 20px; }
+        
+        /* Кнопка назад */
+        .back-btn { display: inline-block; margin-bottom: 20px; color: #c5002b; text-decoration: none; font-weight: 600; font-size: 0.9em; padding: 10px 20px; background: #fff; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        
+        /* Сетка карточек */
+        .categories-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .category-card {
+            background: #fff; border-radius: 20px; padding: 25px 15px; text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04); text-decoration: none;
+            color: #1a1a1a; transition: 0.3s; border-bottom: 4px solid #fdf0f2;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .category-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(197, 0, 43, 0.12); border-bottom-color: #c5002b; }
+        .category-card .icon { font-size: 2.2em; display: block; margin-bottom: 10px; }
+        .category-card .name { font-weight: 700; font-size: 0.95em; margin-bottom: 4px; }
+        .category-card .desc { font-size: 0.75em; color: #777; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn">← На главную</a>
+    <h1>Всё для ухода</h1>
+    
+    <div class="categories-grid">
+        <a href="face.html" class="category-card">
+            <span class="icon">💆‍♀️</span>
+            <span class="name">Уход за лицом</span>
+        </a>
+        <a href="men.html" class="category-card">
+            <span class="icon">🧔</span>
+            <span class="name">Мужская линия</span>
+        </a>
+        <a href="kids.html" class="category-card">
+            <span class="icon">🧸</span>
+            <span class="name">Детский уход</span>
+        </a>
+        <a href="acne.html" class="category-card">
+            <span class="icon">🩺</span>
+            <span class="name">Уход при акне</span>
+        </a>
+        <a href="winter.html" class="category-card">
+            <span class="icon">❄️</span>
+            <span class="name">Уход зимой</span>
+        </a>
+        <a href="https://faberlic.com/by/ru/catalogs/1284?sponsornumber=744653782" target="_blank" class="category-card" style="border-bottom-color: #1a1a1a;">
+            <span class="icon">📖</span>
+            <span class="name">Весь каталог</span>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
