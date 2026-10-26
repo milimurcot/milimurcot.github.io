@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодние подарки Faberlic | Создайте праздник</title>
+    <meta name="description" content="Идеи подарков на Новый год от Faberlic. Подарочные наборы для мамы, подруги и коллег со скидкой 20%. Помощь в выборе от консультанта Ирины.">
+    
+    <link rel="canonical" href="https://irina-faberlic.com/gifts.html">
+    <meta property="og:title" content="Новогодние подарки Faberlic">
+    <meta property="og:description" content="Идеи подарков на Новый год со скидкой 20%.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://irina-faberlic.com/gifts.html">
+    <meta property="og:image" content="https://irina-faberlic.com/images/faberlic-preview.jpg">
+    
+    <link rel="icon" type="image/png" href="2471.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+
+        /* --- МЕНЮ --- */
+        #menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        #side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); padding: 60px 20px 25px; overflow-y: auto; }
+        #side-menu.open { right: 0; }
+        #side-menu h3 { font-size: 1.3em; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #fdf0f2; padding-bottom: 15px; }
+        #side-menu a { display: flex; align-items: center; padding: 14px 15px; margin-bottom: 8px; background: #faf8f5; color: #1a1a1a; text-decoration: none; border-radius: 12px; font-weight: 600; border-left: 4px solid #c5002b; transition: 0.2s; font-size: 0.95em; }
+        #side-menu a:hover { background: #c5002b; color: #fff; transform: translateX(5px); }
+        #side-menu .catalog-link { background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; text-align: center; justify-content: center; border-left: none; }
+        #side-menu .menu-business-link { background: #1a1a1a; color: #fff; text-align: center; justify-content: center; margin-top: 10px; border-left: none; }
+        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; color: #c5002b; cursor: pointer; }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #menu-overlay.open { opacity: 1; pointer-events: auto; }
+
+        /* --- ЗАГОЛОВОК --- */
+        .page-hero { background: linear-gradient(135deg, #e0f2f1 0%, #fff 50%, #fdf0f2 100%); padding: 80px 20px 50px; text-align: center; border-bottom: 3px solid #c5002b; position: relative; overflow: hidden; }
+        .page-hero::before { content: "🎄"; position: absolute; font-size: 10em; opacity: 0.1; top: 10px; right: -20px; transform: rotate(15deg); }
+        .page-hero h1 { font-size: 2em; margin-bottom: 12px; position: relative; }
+        .page-hero p { color: #555; font-size: 1.05em; position: relative; }
+
+        /* --- КНОПКА ПОДАРКА --- */
+        .gift-btn-wrapper { text-align: center; margin: 30px 0; }
+        .gift-btn {
+            display: inline-block; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%);
+            color: #fff; padding: 18px 35px; font-size: 1.1em; font-weight: 700;
+            text-decoration: none; border-radius: 30px; cursor: pointer;
+            box-shadow: 0 6px 20px rgba(197, 0, 43, 0.4);
+            border: 2px solid #fff; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .gift-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.6); }
+
+        /* --- КАРТОЧКИ ТОВАРОВ --- */
+        .section-title { text-align: center; font-size: 1.5em; margin: 30px 0 20px 0; }
+        .product-card { background: #fff; border: 2px solid #fdf0f2; border-radius: 20px; padding: 20px; margin-bottom: 20px; transition: 0.3s; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-left: 5px solid #c5002b; }
+        .product-card:hover { border-color: #c5002b; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(197, 0, 43, 0.1); }
+        .product-top { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; }
+        .product-img { width: 100px; height: 140px; object-fit: cover; border-radius: 12px; flex-shrink: 0; border: 1px solid #fdf0f2; background-color: #fdf0f2; }
+        .product-info { flex: 1; display: flex; flex-direction: column; }
+        .product-tag { display: inline-block; background: #e0f2f1; color: #00796b; font-size: 0.7em; font-weight: 700; padding: 4px 10px; border-radius: 10px; margin-bottom: 8px; align-self: flex-start; text-transform: uppercase; }
+        .product-info h3 { margin-bottom: 5px; font-size: 1.1em; line-height: 1.3; color: #c5002b; font-family: 'Playfair Display', serif; font-weight: 700; }
+        .product-info .short { font-size: 0.85em; color: #666; }
+        .product-desc { font-size: 0.92em; color: #444; margin-bottom: 16px; }
+        .btn-order { display: inline-block; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; padding: 12px 28px; font-size: 0.9em; font-weight: 600; text-decoration: none; border-radius: 25px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s; }
+        .btn-order:hover { transform: translateY(-2px); }
+
+        /* --- МОДАЛЬНОЕ ОКНО --- */
+        #gift-modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center;
+            padding: 20px; opacity: 0; transition: opacity 0.3s ease;
+        }
+        #gift-modal.open { display: flex; opacity: 1; }
+        .gift-modal-content {
+            background: #fff; border-radius: 20px; padding: 30px 25px;
+            max-width: 400px; width: 100%; text-align: center; position: relative;
+            box-shadow: 0 10px 40px rgba(197, 0, 43, 0.3); border: 3px solid #c5002b;
+            animation: zoomIn 0.3s ease;
+        }
+        @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .gift-modal-content h2 { color: #c5002b; margin-bottom: 15px; font-size: 1.5em; font-family: 'Playfair Display', serif; }
+        .gift-modal-content p { color: #444; font-size: 1em; line-height: 1.6; margin-bottom: 20px; }
+        .gift-modal-close { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 30px; color: #c5002b; cursor: pointer; font-weight: bold; }
+
+        /* --- CTA НИЗ --- */
+        .cta-block { background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; padding: 40px 25px; border-radius: 20px; text-align: center; margin: 30px 0; position: relative; overflow: hidden; }
+        .cta-block::before { content: "🎁"; position: absolute; top: -20px; right: -20px; font-size: 8em; opacity: 0.1; }
+        .cta-block h2 { color: #fff; margin-bottom: 10px; font-size: 1.5em; }
+        .cta-block p { color: #fce4e7; margin-bottom: 25px; }
+        .cta-btn { display: inline-block; background: #fff; color: #c5002b; padding: 16px 32px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1em; transition: 0.3s; }
+        .cta-btn:hover { transform: translateY(-3px); }
+
+        /* --- СНЕГ --- */
+        .snowflake {
+            position: fixed; top: -10px; color: #fff; font-size: 1.5em;
+            user-select: none; pointer-events: none; z-index: 9999;
+            animation: fall linear forwards;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+        @keyframes fall { to { transform: translateY(105vh); } }
+
+        /* --- ФУТЕР И КНОПКИ --- */
+        .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; }
+        .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
+        #social-float { position: fixed; bottom: 80px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
+        .social-btn:hover { transform: scale(1.1); }
+        .social-btn svg { width: 30px; height: 30px; fill: #fff; }
+        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        #telegram-float { background-color: #0088cc; }
+
+        .back-link { display: inline-block; margin-bottom: 20px; color: #c5002b; text-decoration: none; font-weight: 600; font-size: 0.9em; padding: 10px 20px; background: #fff; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        @media (max-width: 500px) { .page-hero h1 { font-size: 1.6em; } .product-img { width: 90px; height: 126px; } }
+    </style>
+</head>
+<body>
+
+<button id="menu-btn" onclick="openMenu()">☰</button>
+<div id="menu-overlay" onclick="closeMenu()"></div>
+
+<nav id="side-menu">
+    <button id="menu-close" onclick="closeMenu()">×</button>
+    <h3>Разделы сайта</h3>
+    <a href="catalog.html" target="_blank" class="catalog-link">📖 Актуальный каталог</a>
+    <a href="index.html">🏠 Главная</a>
+    <a href="gifts.html">🎁 Новогодние подарки</a>
+    <a href="care.html">✨ Уход за кожей</a>
+    <a href="makeup.html">💄 Косметика</a>
+    <a href="parfum.html">🌸 Парфюмерия</a>
+    <a href="bads.html">💊 БАДы и здоровье</a>
+    <a href="home.html">🧼 Товары для дома</a>
+    <a href="how-to-buy.html">🛒 Как сделать заказ</a>
+    <a href="partners.html" class="menu-business-link">🚀 Стать партнёром</a>
+</nav>
+
+<div class="page-hero">
+    <h1>Новогодние подарки</h1>
+    <p>Создайте праздник для близких со скидкой 20%</p>
+</div>
+
+<div class="container">
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <!-- КНОПКА ПОДАРКА -->
+    <div class="gift-btn-wrapper">
+        <button class="gift-btn" onclick="openGiftModal()">🎁 Получить подарок</button>
+    </div>
+
+    <!-- ДЛЯ МАМЫ -->
+    <h2 class="section-title">Для мамы</h2>
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/gift-mom.jpg" alt="Набор для мамы" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <div class="product-info">
+                <span class="product-tag">Хит подарков</span>
+                <h3>Подарочный набор «Сияние»</h3>
+                <p class="short">Крем для лица + блеск для губ</p>
+            </div>
+        </div>
+        <p class="product-desc">Идеальный набор для заботы о красоте. Легкий крем увлажнит кожу, а блеск добавит праздничного настроения.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
+    </div>
+
+    <!-- ДЛЯ ПОДРУГИ -->
+    <h2 class="section-title">Для подруги</h2>
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/gift-friend.jpg" alt="Набор для подруги" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <div class="product-info">
+                <span class="product-tag">Тренд</span>
+                <h3>Парфюмерный набор</h3>
+                <p class="short">Туалетная вода + мини-версия</p>
+            </div>
+        </div>
+        <p class="product-desc">Стойкий, женственный аромат, который точно понравится вашей подруге. Красивая упаковка уже в комплекте.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
+    </div>
+
+    <!-- ДЛЯ КОЛЛЕГ -->
+    <h2 class="section-title">Для коллег</h2>
+    <div class="product-card">
+        <div class="product-top">
+            <img src="images/gift-colleague.jpg" alt="Подарок коллеге" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <div class="product-info">
+                <h3>Мини-набор косметики</h3>
+                <p class="short">Бюджетный и приятный сюрприз</p>
+            </div>
+        </div>
+        <p class="product-desc">Отличный вариант, чтобы сделать приятно коллегам без больших затрат. В наборе гигиеническая помада и мини-крем.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
+    </div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta-block">
+    <h2>Не знаете, что выбрать?</h2>
+    <p>Напишите мне — я помогу подобрать идеальный подарок под ваш бюджет и получателя.</p>
+    <a href="https://t.me/faberlic_irina_by" target="_blank" class="cta-btn">Написать в Telegram</a>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ПОДАРКА -->
+<div id="gift-modal" onclick="closeGiftModal(event)">
+    <div class="gift-modal-content" onclick="event.stopPropagation()">
+        <button class="gift-modal-close" onclick="closeGiftModal(event)">×</button>
+        <h2>Условия акции</h2>
+        
+        <!-- ЗДЕСЬ ВАШ ТЕКСТ УСЛОВИЙ! -->
+        <p>
+            🎉 <b>Дарим подарок за первый заказ!</b><br><br>
+            Зарегистрируйтесь на сайте по ссылке, оформите любой заказ от 50 рублей, и получите приятный сюрприз от Faberlic абсолютно бесплатно!<br><br>
+            <i>Подарок выбирается автоматически при сборке заказа.</i>
+        </p>
+        
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" style="display: inline-block; background: #c5002b; color: #fff; padding: 12px 25px; border-radius: 20px; text-decoration: none; font-weight: 600;">Перейти к регистрации</a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Связь со мной: <a href="https://instagram.com/irina.faberlic.belarus" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
+    <p style="margin-top: 10px;">&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
+</div>
+
+<div id="social-float">
+    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float" title="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+
+<script>
+    // Логика меню
+    function openMenu() {
+        document.getElementById('side-menu').classList.add('open');
+        document.getElementById('menu-overlay').classList.add('open');
+    }
+    function closeMenu() {
+        document.getElementById('side-menu').classList.remove('open');
+        document.getElementById('menu-overlay').classList.remove('open');
+    }
+
+    // Логика модального окна подарка
+    function openGiftModal() {
+        document.getElementById('gift-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeGiftModal(event) {
+        document.getElementById('gift-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // Логика снега
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerHTML = '❄';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 3 + 's';
+        snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+        document.body.appendChild(snowflake);
+        setTimeout(() => { snowflake.remove(); }, 6000);
+    }
+    setInterval(createSnowflake, 400);
+</script>
+
+</body>
+</html>
