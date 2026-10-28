@@ -55,12 +55,44 @@
         <span class="icon">❄️</span>
         <span class="name">Уход зимой</span>
     </a>
-    <a href="catalog.html" class="category-card" style="border-bottom-color: #1a1a1a;">
+    <a href="#" onclick="openRegionModal(event)" class="catalog-link">📖 Актуальный каталог Faberlic</a>
         <span class="icon">📖</span>
         <span class="name">Весь каталог</span>
     </a>
     </div>
 </div>
+<!-- МОДАЛЬНОЕ ОКНО ВЫБОРА РЕГИОНА -->
+<div id="region-modal-overlay" onclick="closeRegionModal()"></div>
+<div id="region-modal">
+    <h3>Выберите ваш регион</h3>
+    <p>Для просмотра актуального каталога и цен, пожалуйста, выберите вашу страну:</p>
+    <div class="region-buttons">
+        <a href="#" id="btn-catalog-ru" target="_blank" class="region-btn">🇷🇺 Россия</a>
+        <a href="#" id="btn-catalog-by" target="_blank" class="region-btn">🇧🇾 Беларусь</a>
+    </div>
+    <button class="region-close-btn" onclick="closeRegionModal()">Отмена</button>
+</div>
+    <script src="config.js">
+        function openRegionModal(event) {
+    if (event) event.preventDefault(); 
+    document.getElementById('region-modal-overlay').classList.add('open');
+    document.getElementById('region-modal').classList.add('open');
+}
 
+function closeRegionModal() {
+    document.getElementById('region-modal-overlay').classList.remove('open');
+    document.getElementById('region-modal').classList.remove('open');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (typeof CATALOG_LINKS !== 'undefined') {
+        const btnRu = document.getElementById('btn-catalog-ru');
+        if (btnRu) btnRu.href = CATALOG_LINKS.ru;
+
+        const btnBy = document.getElementById('btn-catalog-by');
+        if (btnBy) btnBy.href = CATALOG_LINKS.by;
+    }
+});
+    </script>
 </body>
 </html>
