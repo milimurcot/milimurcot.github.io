@@ -58,14 +58,29 @@
         .back-link { display: inline-block; color: #c5002b; text-decoration: none; font-weight: 600; margin-bottom: 20px; background: #fff; padding: 8px 16px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: 0.3s; }
         .back-link:hover { background: #fdf0f2; }
 
-        .gift-btn { display: inline-block; background: #fff; border: 2px solid #c5002b; color: #c5002b; padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.95em; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
-        .gift-btn:hover { background: #c5002b; color: #fff; }
-
-        .telegram-link { display: inline-block; background: #0088cc; color: #fff !important; padding: 10px 20px; border-radius: 20px; text-decoration: none !important; font-weight: 600; margin-top: 10px; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3); transition: 0.3s; }
-        .telegram-link:hover { transform: translateY(-2px); background: #0077b3; }
+        /* Обновленная длинная красная кнопка */
+        .gift-btn { display: block; width: 100%; background: #c5002b; color: #fff; padding: 16px; border-radius: 25px; font-weight: 700; font-size: 1.1em; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; margin-bottom: 25px; border: none; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); text-align: center; }
+        .gift-btn:hover { background: #a00022; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197, 0, 43, 0.4); }
 
         .btn-order { display: inline-block; background: #c5002b; color: #fff; padding: 10px 24px; font-size: 0.85em; font-weight: 600; text-decoration: none; border-radius: 22px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s; text-align: center; border: none; cursor: pointer; }
         .btn-order:hover { background: #a00022; transform: translateY(-2px); }
+
+        /* --- БЛОК "НЕ ЗНАЕТЕ, ЧТО ВЫБРАТЬ" --- */
+        .help-container {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px 20px;
+            background: #c5002b; /* Красный фон */
+            border-radius: 16px;
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(197, 0, 43, 0.2);
+        }
+        .help-container h3 { color: #fff; font-size: 1.4em; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .help-container p { font-size: 0.95em; color: #fdf0f2; margin-bottom: 20px; }
+        
+        /* Белая кнопка Telegram внутри красного блока */
+        .telegram-link { display: inline-block; background: #fff; color: #0088cc !important; padding: 12px 25px; border-radius: 20px; text-decoration: none !important; font-weight: 700; font-size: 0.95em; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .telegram-link:hover { transform: translateY(-2px); background: #f0f8ff; }
 
         /* --- КАРТОЧКИ ТОВАРОВ --- */
         .section-title { margin-top: 30px; margin-bottom: 15px; font-size: 1.6em; }
@@ -99,22 +114,25 @@
         .region-close-btn { background: none; border: none; color: #888; font-size: 0.9em; cursor: pointer; text-decoration: underline; padding: 5px; font-family: 'Montserrat', sans-serif; }
         .region-close-btn:hover { color: #c5002b; }
 
-        /* --- ФУТЕР И КНОПКИ --- */
-           .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; position: relative; z-index: 10; }
+        /* --- ФУТЕР И ПЛАВАЮЩИЕ КНОПКИ --- */
+         .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; position: relative; z-index: 10; }
         .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
-        #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
-        .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
+        
+        #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+        .social-btn { width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.3s; }
         .social-btn:hover { transform: scale(1.1); }
-        .social-btn svg { width: 30px; height: 30px; fill: #fff; }
+        .social-btn svg { width: 35px; height: 35px; fill: #fff; }
         #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         #telegram-float { background-color: #0088cc; }
 
         @media (max-width: 500px) {
             .page-hero h1 { font-size: 1.6em; }
             .product-img { width: 90px; height: 126px; }
-            #social-float { bottom: 15px; right: 10px; gap: 8px; }
-            .social-btn { width: 50px; height: 50px; }
-            .social-btn svg { width: 25px; height: 25px; }
+            .help-container { padding: 25px 15px; }
+            /* Сделали кнопки еще больше для мобильных */
+            #social-float { bottom: 20px; right: 15px; gap: 12px; }
+            .social-btn { width: 70px; height: 70px; }
+            .social-btn svg { width: 40px; height: 40px; }
         }
     </style>
 </head>
@@ -159,9 +177,8 @@
 <div class="container">
     <a href="index.html" class="back-link fade-up">← На главную</a>
     
-    <div class="fade-up">
-        <button class="gift-btn" onclick="openGiftModal()">🎁 Получить подарок</button>
-    </div>
+    <!-- Длинная красная кнопка -->
+    <button class="gift-btn fade-up" onclick="openGiftModal()">🎁 Получить подарок</button>
 
     <!-- Для мамы -->
     <h2 class="section-title fade-up">Для мамы</h2>
@@ -178,18 +195,6 @@
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
-    <div class="product-card fade-up">
-        <div class="product-top">
-            <img src="images/face-set.jpg" alt="Набор для лица" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
-            <div class="product-info">
-                <h3>Набор для ухода за кожей лица</h3>
-                <p class="short">Эффективный способ сделать кожу идеальной</p>
-            </div>
-        </div>
-        <p class="product-desc">Обеспечивает глубокое очищение и предотвращает появление признаков старения. Два режима работы: низкая и высокая скорости. Работает от батареек типа АА.</p>
-        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
-    </div>
-
     <!-- Для подруги -->
     <h2 class="section-title fade-up">Для подруги</h2>
     <div class="product-card fade-up">
@@ -202,18 +207,6 @@
             </div>
         </div>
         <p class="product-desc">Стойкий, женственный аромат цитрусовых и зеленых нот, оттененных тончайшими кружевными нюансами фруктов. Цветочные оттенки хрупкого ландыша, чарующего ириса и розы в сердце аромата, который точно понравится вашей подруге. Красивая упаковка уже в комплекте.</p>
-        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
-    </div>
-
-    <div class="product-card fade-up">
-        <div class="product-top">
-            <img src="images/palette.jpg" alt="Палетка" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
-            <div class="product-info">
-                <h3>Палетка для лица и глаз</h3>
-                <p class="short">Макияж в любом месте</p>
-            </div>
-        </div>
-        <p class="product-desc">7 трендовых оттенков: можно использовать как тени для век, румяна и хайлайтер. 4 разных текстуры: спарклы, матовые, сатиновые и мерцающие. Высокая пигментация и легкая растушевка.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
@@ -235,18 +228,6 @@
     <h2 class="section-title fade-up">Для спортсменов</h2>
     <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/massager.jpg" alt="Массажер" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
-            <div class="product-info">
-                <h3>Перкуссионный массажёр</h3>
-                <p class="short">Эффективное средство для снятия мышечного напряжения</p>
-            </div>
-        </div>
-        <p class="product-desc">В комплекте 4 насадки для удобной проработки разных участков тела. 30 скоростей работы для индивидуального подбора комфортного режима массажа. Амплитуда 6 мм и темп 1800-3200 ударов в минуту для глубокого и эффективного массажа различных мышц.</p>
-        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
-    </div>
-
-    <div class="product-card fade-up">
-        <div class="product-top">
             <img src="images/roller.jpg" alt="Массажер роликовый" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <h3>Роликовый антицеллюлитный массажёр</h3>
@@ -257,10 +238,10 @@
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
-    <!-- Блок с Telegram -->
-    <div class="fade-up" style="text-align: center; margin-top: 40px; padding: 20px; background: #fff; border-radius: 16px; border: 2px dashed #c5002b;">
-        <h3 style="font-size: 1.2em; margin-bottom: 10px;">Не знаете, что выбрать?</h3>
-        <p style="font-size: 0.95em; color: #555; margin-bottom: 15px;">Напишите мне — я помогу подобрать идеальный подарок под ваш бюджет и получателя.</p>
+    <!-- Блок "Не знаете, что выбрать" (Красный прямоугольник) -->
+    <div class="fade-up help-container">
+        <h3>Не знаете, что выбрать?</h3>
+        <p>Напишите мне — я помогу подобрать идеальный подарок под ваш бюджет и получателя.</p>
         <a href="https://t.me/faberlic_irina_by" target="_blank" class="telegram-link">Написать в Telegram</a>
     </div>
 </div>
@@ -273,7 +254,7 @@
         <p style="font-size: 1.1em; color: #c5002b; font-weight: 700; margin-bottom: 10px;">🎉 Дарю подарок за первый заказ!</p>
         <p>Зарегистрируйтесь на сайте по ссылке, оформите любой заказ на определенную сумму и получите приятный сюрприз от Faberlic абсолютно бесплатно!</p>
         <p style="font-style: italic; color: #888; font-size: 0.85em;">Подарок выбирается автоматически при сборке заказа.</p>
-        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order" style="margin-top: 15px;">Перейти к регистрации</a>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order" style="margin-top: 15px; display: block; width: 100%;">Перейти к регистрации</a>
     </div>
 </div>
 
@@ -295,6 +276,7 @@
     <p style="margin-top: 10px;">&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
 </div>
 
+<!-- ПЛАВАЮЩИЕ КНОПКИ -->
 <div id="social-float">
     <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
