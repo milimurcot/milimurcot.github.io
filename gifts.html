@@ -151,17 +151,17 @@
 <nav id="side-menu">
     <button id="menu-close" onclick="closeMenu()">×</button>
     
-    <!-- Кнопка каталога -->
+    <!-- Главная кнопка каталога -->
     <a href="#" onclick="openRegionModal(event)" class="catalog-btn">
         📖 Актуальный каталог Faberlic
     </a>
 
-    <!-- Категории (сетка) -->
     <div class="menu-section">
         <h4 class="menu-title">Покупателям</h4>
+        <!-- ВАЖНО: Вот этот div с классом menu-grid делает сетку -->
         <div class="menu-grid">
             <a href="index.html"><span>🏠</span> Главная</a>
-            <a href="gifts.html"><span>🎄</span> Подарки родным</a>
+            <a href="gifts.html"><span>🎄</span> Подарки</a>
             <a href="care.html"><span>✨</span> Уход за кожей</a>
             <a href="makeup.html"><span>💄</span> Косметика</a>
             <a href="parfum.html"><span>🌸</span> Парфюмерия</a>
@@ -171,11 +171,11 @@
         </div>
     </div>
 
-    <!-- Полезное и бизнес (список) -->
     <div class="menu-section">
         <h4 class="menu-title">Полезное и бизнес</h4>
         <a href="partners.html" class="menu-business-btn">🚀 Стать партнёром (Бизнес)</a>
         
+        <!-- ВАЖНО: У этих ссылок класс menu-list-item (они будут с красной полосой, как и положено списку) -->
         <a href="how-to-buy.html" class="menu-list-item">🛒 Как сделать заказ?</a>
         <a href="acne.html" class="menu-list-item">📝 Статья: уход при акне</a>
         <a href="winter.html" class="menu-list-item">❄️ Статья: уход зимой</a>
