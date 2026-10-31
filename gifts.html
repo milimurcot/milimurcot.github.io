@@ -3,265 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новогодние подарки Faberlic | Создайте праздник</title>
-    <meta name="description" content="Идеи подарков на Новый год от Faberlic. Подарочные наборы для мамы, подруги и коллег со скидкой 20%. Помощь в выборе от консультанта Ирины.">
+    <title>Новогодние подарки Faberlic | Ирина</title>
+    <meta name="description" content="Подарочные наборы Faberlic для мамы, коллег и близких. Скидка 20% по ссылке.">
     
     <link rel="canonical" href="https://irina-faberlic.com/gifts.html">
     <meta property="og:title" content="Новогодние подарки Faberlic">
-    <meta property="og:description" content="Идеи подарков на Новый год со скидкой 20%.">
-    <meta property="og:type" content="website">
     <meta property="og:url" content="https://irina-faberlic.com/gifts.html">
-    <meta property="og:image" content="https://irina-faberlic.com/images/faberlic-preview.jpg">
-    
     <link rel="icon" type="image/png" href="2471.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; overflow-x: hidden; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
-    .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
 
-    /* --- АНИМАЦИИ --- */
-    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+        /* --- АНИМАЦИИ --- */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* --- МЕНЮ --- */
-    #menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-    #menu-btn:hover { background-color: #a00022; transform: scale(1.05); }
-    #side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); padding: 60px 20px 25px; overflow-y: auto; }
-    #side-menu.open { right: 0; }
-    #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 32px; color: #c5002b; cursor: pointer; }
+        /* --- БОКОВОЕ МЕНЮ --- */
+        #menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        #menu-btn:hover { background-color: #a00022; transform: scale(1.05); }
+        #side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); padding: 60px 20px 25px; overflow-y: auto; }
+        #side-menu.open { right: 0; }
+        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 32px; color: #c5002b; cursor: pointer; }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #menu-overlay.open { opacity: 1; pointer-events: auto; }
 
-    /* Кнопка каталога */
-    .catalog-btn { display: block; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; font-weight: 700; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); font-size: 0.95em; transition: 0.3s; border: none; }
-    .catalog-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197, 0, 43, 0.4); }
+        .catalog-btn { display: block; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; font-weight: 700; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); font-size: 0.95em; transition: 0.3s; border: none; }
+        .catalog-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197, 0, 43, 0.4); }
 
-    /* Секции меню */
-    .menu-section { margin-bottom: 25px; }
-    .menu-title { font-size: 0.75em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        .menu-section { margin-bottom: 25px; }
+        .menu-title { font-size: 0.75em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .menu-grid a { background: #faf8f5; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 5px; border-radius: 12px; color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.75em; text-align: center; transition: 0.2s; border: 1px solid #fdf0f2; border-left: 1px solid #fdf0f2; box-shadow: none; }
+        .menu-grid a span { font-size: 1.6em; margin-bottom: 4px; }
+        .menu-grid a:hover { background: #c5002b; color: #fff; border-color: #c5002b; transform: translateY(-2px); }
 
-    /* Сетка категорий (исправленная) */
-    .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .menu-grid a { background: #faf8f5; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 5px; border-radius: 12px; color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.75em; text-align: center; transition: 0.2s; border: 1px solid #fdf0f2; border-left: 1px solid #fdf0f2; box-shadow: none; }
-    .menu-grid a span { font-size: 1.6em; margin-bottom: 4px; }
-    .menu-grid a:hover { background: #c5002b; color: #fff; border-color: #c5002b; transform: translateY(-2px); }
+        .menu-business-btn { display: block; background: #1a1a1a; color: #fff; text-align: center; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 5px; margin-bottom: 15px; font-size: 0.9em; transition: 0.3s; }
+        .menu-business-btn:hover { background: #333; transform: translateY(-2px); }
+        .menu-list-item { display: block; background: #faf8f5; color: #1a1a1a; padding: 12px 15px; border-radius: 10px; text-decoration: none; font-weight: 500; margin-bottom: 8px; font-size: 0.85em; border-left: 3px solid #c5002b; transition: 0.2s; }
+        .menu-list-item:hover { background: #fdf0f2; color: #c5002b; padding-left: 20px; }
 
-    /* Кнопка партнера */
-    .menu-business-btn { display: block; background: #1a1a1a; color: #fff; text-align: center; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 5px; margin-bottom: 15px; font-size: 0.9em; transition: 0.3s; }
-    .menu-business-btn:hover { background: #333; transform: translateY(-2px); }
+        /* --- ЗАГОЛОВОК --- */
+        .page-hero { background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%); padding: 80px 20px 50px; text-align: center; border-bottom: 3px solid #c5002b; }
+        .page-hero h1 { font-size: 2em; margin-bottom: 10px; }
+        .page-hero p { color: #555; font-size: 1.05em; }
 
-    /* Список ссылок */
-    .menu-list-item { display: block; background: #faf8f5; color: #1a1a1a; padding: 12px 15px; border-radius: 10px; text-decoration: none; font-weight: 500; margin-bottom: 8px; font-size: 0.85em; border-left: 3px solid #c5002b; transition: 0.2s; }
-    .menu-list-item:hover { background: #fdf0f2; color: #c5002b; padding-left: 20px; }
-    #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
-    #menu-overlay.open { opacity: 1; pointer-events: auto; }
+        /* --- КНОПКИ --- */
+        .back-link { display: inline-block; color: #c5002b; text-decoration: none; font-weight: 600; margin-bottom: 20px; background: #fff; padding: 8px 16px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: 0.3s; }
+        .back-link:hover { background: #fdf0f2; }
 
-    /* --- ЗАГОЛОВОК --- */
-    .page-hero { background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%); padding: 80px 20px 50px; text-align: center; border-bottom: 3px solid #c5002b; }
-    .page-hero h1 { font-size: 2em; margin-bottom: 10px; }
-    .page-hero p { color: #555; font-size: 1.05em; }
+        .gift-btn { display: inline-block; background: #fff; border: 2px solid #c5002b; color: #c5002b; padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.95em; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
+        .gift-btn:hover { background: #c5002b; color: #fff; }
 
-    /* --- КАРТОЧКИ ТОВАРОВ (Подарки) --- */
-    .product-card { background: #fff; border: 2px solid #fdf0f2; border-left: 5px solid #c5002b; border-radius: 16px; padding: 18px; margin-bottom: 18px; transition: 0.3s; }
-    .product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
-    .product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
-    .product-img { width: 100px; height: 140px; object-fit: cover; border-radius: 10px; flex-shrink: 0; border: 1px solid #fdf0f2; background-color: #fdf0f2; }
-    .product-info { flex: 1; display: flex; flex-direction: column; }
-    .product-tag { display: inline-block; background: #fdf0f2; color: #c5002b; font-size: 0.7em; font-weight: 700; padding: 3px 10px; border-radius: 10px; margin-bottom: 6px; align-self: flex-start; letter-spacing: 0.5px; text-transform: uppercase; }
-    .product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; }
-    .product-info .short { font-size: 0.85em; color: #666; margin: 0; }
-    .product-desc { font-size: 0.9em; color: #444; margin-bottom: 14px; }
-    .btn-order { display: inline-block; background: #c5002b; color: #fff; padding: 10px 24px; font-size: 0.85em; font-weight: 600; text-decoration: none; border-radius: 22px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s; }
-    .btn-order:hover { background: #a00022; transform: translateY(-2px); }
+        .telegram-link { display: inline-block; background: #0088cc; color: #fff !important; padding: 10px 20px; border-radius: 20px; text-decoration: none !important; font-weight: 600; margin-top: 10px; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3); transition: 0.3s; }
+        .telegram-link:hover { transform: translateY(-2px); background: #0077b3; }
 
-    /* --- СТИЛИ ДЛЯ ОКНА ВЫБОРА РЕГИОНА --- */
-    #region-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
-    #region-modal-overlay.open { opacity: 1; pointer-events: auto; }
-    #region-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -40%); width: 90%; max-width: 400px; background: #fff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 2001; text-align: center; opacity: 0; pointer-events: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    #region-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
-    #region-modal h3 { margin-bottom: 10px; font-size: 1.4em; }
-    #region-modal p { font-size: 0.9em; color: #555; margin-bottom: 20px; line-height: 1.5; }
-    .region-buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
-    .region-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #faf8f5; border: 2px solid #fdf0f2; color: #1a1a1a; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: 0.3s; }
-    .region-btn:hover { background: #c5002b; color: #fff; border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 0, 43, 0.2); }
-    .region-close-btn { background: none; border: none; color: #888; font-size: 0.9em; cursor: pointer; text-decoration: underline; padding: 5px; font-family: 'Montserrat', sans-serif; }
-    .region-close-btn:hover { color: #c5002b; }
+        .btn-order { display: inline-block; background: #c5002b; color: #fff; padding: 10px 24px; font-size: 0.85em; font-weight: 600; text-decoration: none; border-radius: 22px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s; text-align: center; border: none; cursor: pointer; }
+        .btn-order:hover { background: #a00022; transform: translateY(-2px); }
 
-    /* --- ФУТЕР И КНОПКИ --- */
-    .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; }
-    .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
-    #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
-    .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
-    .social-btn:hover { transform: scale(1.1); }
-    .social-btn svg { width: 30px; height: 30px; fill: #fff; }
-    #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    #telegram-float { background-color: #0088cc; }
+        /* --- КАРТОЧКИ ТОВАРОВ --- */
+        .section-title { margin-top: 30px; margin-bottom: 15px; font-size: 1.6em; }
+        .product-card { background: #fff; border: 2px solid #fdf0f2; border-left: 5px solid #c5002b; border-radius: 16px; padding: 18px; margin-bottom: 18px; transition: 0.3s; }
+        .product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
+        .product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+        .product-img { width: 100px; height: 140px; object-fit: cover; border-radius: 10px; flex-shrink: 0; border: 1px solid #fdf0f2; background-color: #fdf0f2; }
+        .product-info { flex: 1; display: flex; flex-direction: column; }
+        .product-tag { display: inline-block; background: #fdf0f2; color: #c5002b; font-size: 0.7em; font-weight: 700; padding: 3px 10px; border-radius: 10px; margin-bottom: 6px; align-self: flex-start; letter-spacing: 0.5px; text-transform: uppercase; }
+        .product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; }
+        .product-info .short { font-size: 0.85em; color: #666; margin: 0; }
+        .product-desc { font-size: 0.9em; color: #444; margin-bottom: 14px; }
 
-    @media (max-width: 500px) {
-        .page-hero h1 { font-size: 1.6em; }
-        .product-img { width: 90px; height: 126px; }
-        #social-float { bottom: 15px; right: 10px; gap: 8px; }
-        .social-btn { width: 50px; height: 50px; }
-        .social-btn svg { width: 25px; height: 25px; }
-    }
-/* --- ИСПРАВЛЕНИЕ ДЛЯ СТРАНИЦЫ ПОДАРКОВ --- */
+        /* --- ВСПЛЫВАЮЩИЕ ОКНА --- */
+        #gift-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; align-items: center; justify-content: center; }
+        #gift-modal.open { display: flex; }
+        #gift-modal > div { background: #fff; padding: 30px 25px; border-radius: 20px; max-width: 90%; width: 400px; position: relative; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-height: 85vh; overflow-y: auto; }
+        #gift-modal .close-btn { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 28px; color: #c5002b; cursor: pointer; }
+        #gift-modal h3 { margin-bottom: 15px; font-size: 1.4em; }
+        #gift-modal p { font-size: 0.95em; color: #444; margin-bottom: 15px; }
 
-/* 1. Прячем окно подарка по умолчанию (убирает крестик) */
-#gift-modal {
-    display: none;
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6); z-index: 2000;
-    align-items: center; justify-content: center;
-}
-#gift-modal.open { display: flex; }
+        #region-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #region-modal-overlay.open { opacity: 1; pointer-events: auto; }
+        #region-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -40%); width: 90%; max-width: 400px; background: #fff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 2001; text-align: center; opacity: 0; pointer-events: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        #region-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
+        #region-modal h3 { margin-bottom: 10px; font-size: 1.4em; }
+        #region-modal p { font-size: 0.9em; color: #555; margin-bottom: 20px; line-height: 1.5; }
+        .region-buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
+        .region-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #faf8f5; border: 2px solid #fdf0f2; color: #1a1a1a; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: 0.3s; }
+        .region-btn:hover { background: #c5002b; color: #fff; border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 0, 43, 0.2); }
+        .region-close-btn { background: none; border: none; color: #888; font-size: 0.9em; cursor: pointer; text-decoration: underline; padding: 5px; font-family: 'Montserrat', sans-serif; }
+        .region-close-btn:hover { color: #c5002b; }
 
-/* 2. Настраиваем контейнер для снега (убирает белую пустоту) */
-#snow-container {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; z-index: 0; overflow: hidden;
-}
-.snowflake { position: absolute; color: #c5002b; user-select: none; }
+        /* --- ФУТЕР И КНОПКИ --- */
+           .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; position: relative; z-index: 10; }
+        .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
+        #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
+        .social-btn:hover { transform: scale(1.1); }
+        .social-btn svg { width: 30px; height: 30px; fill: #fff; }
+        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        #telegram-float { background-color: #0088cc; }
 
-/* 3. Стили для ссылки "На главную" */
-.back-link, .back-btn {
-    display: inline-block;
-    color: #c5002b;
-    text-decoration: none;
-    font-weight: 600;
-    margin-bottom: 20px;
-    background: #fff;
-    padding: 8px 16px;
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; overflow-x: hidden; }
-h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
-.container { max-width: 700px; margin: 0 auto; padding: 20px; }
-
-/* --- АНИМАЦИИ --- */
-.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-
-/* --- БОКОВОЕ МЕНЮ --- */
-#menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-#menu-btn:hover { background-color: #a00022; transform: scale(1.05); }
-#side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); padding: 60px 20px 25px; overflow-y: auto; }
-#side-menu.open { right: 0; }
-#menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 32px; color: #c5002b; cursor: pointer; }
-#menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
-#menu-overlay.open { opacity: 1; pointer-events: auto; }
-
-/* Кнопка каталога */
-.catalog-btn { display: block; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; font-weight: 700; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); font-size: 0.95em; transition: 0.3s; border: none; }
-.catalog-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197, 0, 43, 0.4); }
-
-/* Секции меню */
-.menu-section { margin-bottom: 25px; }
-.menu-title { font-size: 0.75em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700; font-family: 'Montserrat', sans-serif; }
-
-/* Сетка категорий */
-.menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.menu-grid a { background: #faf8f5; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 5px; border-radius: 12px; color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.75em; text-align: center; transition: 0.2s; border: 1px solid #fdf0f2; border-left: 1px solid #fdf0f2; box-shadow: none; }
-.menu-grid a span { font-size: 1.6em; margin-bottom: 4px; }
-.menu-grid a:hover { background: #c5002b; color: #fff; border-color: #c5002b; transform: translateY(-2px); }
-
-/* Кнопка партнера и списки */
-.menu-business-btn { display: block; background: #1a1a1a; color: #fff; text-align: center; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; margin-top: 5px; margin-bottom: 15px; font-size: 0.9em; transition: 0.3s; }
-.menu-business-btn:hover { background: #333; transform: translateY(-2px); }
-.menu-list-item { display: block; background: #faf8f5; color: #1a1a1a; padding: 12px 15px; border-radius: 10px; text-decoration: none; font-weight: 500; margin-bottom: 8px; font-size: 0.85em; border-left: 3px solid #c5002b; transition: 0.2s; }
-.menu-list-item:hover { background: #fdf0f2; color: #c5002b; padding-left: 20px; }
-
-/* --- ЗАГОЛОВОК И КНОПКИ --- */
-.page-hero { background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%); padding: 80px 20px 50px; text-align: center; border-bottom: 3px solid #c5002b; }
-.page-hero h1 { font-size: 2em; margin-bottom: 10px; }
-.page-hero p { color: #555; font-size: 1.05em; }
-
-.back-link { display: inline-block; color: #c5002b; text-decoration: none; font-weight: 600; margin-bottom: 20px; background: #fff; padding: 8px 16px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: 0.3s; }
-.back-link:hover { background: #fdf0f2; }
-
-.gift-btn { display: inline-block; background: #fff; border: 2px solid #c5002b; color: #c5002b; padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.95em; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
-.gift-btn:hover { background: #c5002b; color: #fff; }
-
-.telegram-link { display: inline-block; background: #0088cc; color: #fff !important; padding: 10px 20px; border-radius: 20px; text-decoration: none !important; font-weight: 600; margin-top: 10px; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3); transition: 0.3s; }
-.telegram-link:hover { transform: translateY(-2px); background: #0077b3; }
-
-.btn-order { display: inline-block; background: #c5002b; color: #fff; padding: 10px 24px; font-size: 0.85em; font-weight: 600; text-decoration: none; border-radius: 22px; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.3); transition: 0.3s; text-align: center; border: none; cursor: pointer; }
-.btn-order:hover { background: #a00022; transform: translateY(-2px); }
-
-/* --- КАРТОЧКИ ТОВАРОВ --- */
-.section-title { margin-top: 30px; margin-bottom: 15px; font-size: 1.6em; }
-.product-card { background: #fff; border: 2px solid #fdf0f2; border-left: 5px solid #c5002b; border-radius: 16px; padding: 18px; margin-bottom: 18px; transition: 0.3s; }
-.product-card:hover { border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(197, 0, 43, 0.1); }
-.product-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
-.product-img { width: 100px; height: 140px; object-fit: cover; border-radius: 10px; flex-shrink: 0; border: 1px solid #fdf0f2; background-color: #fdf0f2; }
-.product-info { flex: 1; display: flex; flex-direction: column; }
-.product-tag { display: inline-block; background: #fdf0f2; color: #c5002b; font-size: 0.7em; font-weight: 700; padding: 3px 10px; border-radius: 10px; margin-bottom: 6px; align-self: flex-start; letter-spacing: 0.5px; text-transform: uppercase; }
-.product-info h3 { margin: 0 0 5px 0; font-size: 1.05em; line-height: 1.35; }
-.product-info .short { font-size: 0.85em; color: #666; margin: 0; }
-.product-desc { font-size: 0.9em; color: #444; margin-bottom: 14px; }
-
-/* --- ВСПЛЫВАЮЩИЕ ОКНА --- */
-/* Окно подарка */
-#gift-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; align-items: center; justify-content: center; }
-#gift-modal.open { display: flex; }
-#gift-modal > div { background: #fff; padding: 30px 25px; border-radius: 20px; max-width: 90%; width: 400px; position: relative; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-height: 85vh; overflow-y: auto; }
-#gift-modal .close-btn { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 28px; color: #c5002b; cursor: pointer; }
-#gift-modal h3 { margin-bottom: 15px; font-size: 1.4em; }
-#gift-modal p { font-size: 0.95em; color: #444; margin-bottom: 15px; }
-
-/* Окно выбора региона */
-#region-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
-#region-modal-overlay.open { opacity: 1; pointer-events: auto; }
-#region-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -40%); width: 90%; max-width: 400px; background: #fff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 2001; text-align: center; opacity: 0; pointer-events: none; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-#region-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
-#region-modal h3 { margin-bottom: 10px; font-size: 1.4em; }
-#region-modal p { font-size: 0.9em; color: #555; margin-bottom: 20px; line-height: 1.5; }
-.region-buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
-.region-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #faf8f5; border: 2px solid #fdf0f2; color: #1a1a1a; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.05em; transition: 0.3s; }
-.region-btn:hover { background: #c5002b; color: #fff; border-color: #c5002b; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 0, 43, 0.2); }
-.region-close-btn { background: none; border: none; color: #888; font-size: 0.9em; cursor: pointer; text-decoration: underline; padding: 5px; font-family: 'Montserrat', sans-serif; }
-.region-close-btn:hover { color: #c5002b; }
-
-/* --- ФУТЕР И СОЦСЕТИ --- */
-.footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; position: relative; z-index: 10; }
-.footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
-#social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
-.social-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: 0.3s; }
-.social-btn:hover { transform: scale(1.1); }
-.social-btn svg { width: 30px; height: 30px; fill: #fff; }
-#instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-#telegram-float { background-color: #0088cc; }
-
-/* Снежинки */
-#snow-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-.snowflake { position: absolute; color: #c5002b; user-select: none; opacity: 0.5; }
-
-@media (max-width: 500px) {
-    .page-hero h1 { font-size: 1.6em; }
-    .product-img { width: 90px; height: 126px; }
-    #social-float { bottom: 15px; right: 10px; gap: 8px; }
-    .social-btn { width: 50px; height: 50px; }
-    .social-btn svg { width: 25px; height: 25px; }
-                        }
+        @media (max-width: 500px) {
+            .page-hero h1 { font-size: 1.6em; }
+            .product-img { width: 90px; height: 126px; }
+            #social-float { bottom: 15px; right: 10px; gap: 8px; }
+            .social-btn { width: 50px; height: 50px; }
+            .social-btn svg { width: 25px; height: 25px; }
+        }
     </style>
 </head>
 <body>
 
+<!-- МЕНЮ -->
 <button id="menu-btn" onclick="openMenu()">☰</button>
 <div id="menu-overlay" onclick="closeMenu()"></div>
-
 <nav id="side-menu">
     <button id="menu-close" onclick="closeMenu()">×</button>
-    
-    <!-- Главная кнопка каталога -->
-    <a href="#" onclick="openRegionModal(event)" class="catalog-btn">
-        📖 Актуальный каталог Faberlic
-    </a>
-
+    <a href="#" onclick="openRegionModal(event)" class="catalog-btn">📖 Актуальный каталог Faberlic</a>
     <div class="menu-section">
         <h4 class="menu-title">Покупателям</h4>
-        <!-- ВАЖНО: Вот этот div с классом menu-grid делает сетку -->
         <div class="menu-grid">
             <a href="index.html"><span>🏠</span> Главная</a>
             <a href="gifts.html"><span>🎄</span> Подарки</a>
@@ -273,12 +139,9 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
             <a href="home.html"><span>🧼</span> Для дома</a>
         </div>
     </div>
-
     <div class="menu-section">
         <h4 class="menu-title">Полезное и бизнес</h4>
         <a href="partners.html" class="menu-business-btn">🚀 Стать партнёром (Бизнес)</a>
-        
-        <!-- ВАЖНО: У этих ссылок класс menu-list-item (они будут с красной полосой, как и положено списку) -->
         <a href="how-to-buy.html" class="menu-list-item">🛒 Как сделать заказ?</a>
         <a href="acne.html" class="menu-list-item">📝 Статья: уход при акне</a>
         <a href="winter.html" class="menu-list-item">❄️ Статья: уход зимой</a>
@@ -286,24 +149,25 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
     </div>
 </nav>
 
-<div class="page-hero">
+<!-- ЗАГОЛОВОК -->
+<div class="page-hero fade-up">
     <h1>Новогодние подарки</h1>
     <p>Создайте праздник для близких со скидкой 20%</p>
 </div>
 
+<!-- КОНТЕНТ -->
 <div class="container">
-    <a href="index.html" class="back-link">← На главную</a>
-
-    <!-- КНОПКА ПОДАРКА -->
-    <div class="gift-btn-wrapper">
+    <a href="index.html" class="back-link fade-up">← На главную</a>
+    
+    <div class="fade-up">
         <button class="gift-btn" onclick="openGiftModal()">🎁 Получить подарок</button>
     </div>
 
-    <!-- ДЛЯ МАМЫ -->
-    <h2 class="section-title">Для мамы</h2>
-    <div class="product-card">
+    <!-- Для мамы -->
+    <h2 class="section-title fade-up">Для мамы</h2>
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793016717603.jpg" alt="Набор для мамы" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/1793016717603.jpg" alt="Набор ножей" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <span class="product-tag">Хит подарков</span>
                 <h3>Набор кухонных ножей на подставке</h3>
@@ -313,9 +177,10 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         <p class="product-desc">В наборе 8 предметов: нож-топорик, поварской нож, универсальный нож, разделочный нож, нож для овощей и фруктов, точилка для ножей, кухонные ножницы с орехоколом и открывалкой для бутылок, вращающаяся подставка.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
-    <div class="product-card">
+
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793016728672.jpg" alt="Набор для мамы" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/face-set.jpg" alt="Набор для лица" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <h3>Набор для ухода за кожей лица</h3>
                 <p class="short">Эффективный способ сделать кожу идеальной</p>
@@ -325,23 +190,24 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
-    <!-- ДЛЯ ПОДРУГИ -->
-    <h2 class="section-title">Для подруги</h2>
-    <div class="product-card">
+    <!-- Для подруги -->
+    <h2 class="section-title fade-up">Для подруги</h2>
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793017676847.jpg" alt="Набор для подруги" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/perfume.jpg" alt="Духи" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <span class="product-tag">Хит</span>
                 <h3>Духи Pour Toujours</h3>
                 <p class="short">Аромат с особой историей</p>
             </div>
         </div>
-        <p class="product-desc">Стойкий, женственный аромат цитрусовых и зеленых нот, оттененных тончайшими кружевными нюансами фруктов. Цветочные оттенки хрупкого ландыша, чарующего ириса и розы в сердце аромата, который точно понравится вашей подруге. Красивая упаковка уже в комплекте.</p>
+        <p class="product-desc">Стойкий, женственный аромат цитрусовых и зеленых нот, оттененных тончайшими кружевными нюансами фруктов. Цветочные оттенки хрупкого ландыша, чарующего ириса и розы в сердце аромата, который точно понравится вашей подруге. Красивая упаковка уже в комплекте.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
-    <div class="product-card">
+
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793022310973.jpg" alt="Набор для подруги" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/palette.jpg" alt="Палетка" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <h3>Палетка для лица и глаз</h3>
                 <p class="short">Макияж в любом месте</p>
@@ -351,77 +217,86 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
-    <!-- ДЛЯ КОЛЛЕГ -->
-    <h2 class="section-title">Для коллег</h2>
-    <div class="product-card">
+    <!-- Для коллег -->
+    <h2 class="section-title fade-up">Для коллег</h2>
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793022540260.jpg" alt="Подарок коллеге" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/sheets.jpg" alt="Салфетки" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <h3>Салфетки-ловушки для защиты одежды от окрашивания</h3>
-                <p class="short">Всегда яркие и чистие цвета тканей</p>
+                <p class="short">Всегда яркие и чистые цвета тканей</p>
             </div>
         </div>
         <p class="product-desc">В процессе стирки салфетки улавливают вымывающиеся из тканей красители и предотвращают взаимное окрашивание вещей (линьку). Сохраняют цвета и яркость тканей, поддерживают изначальный внешний вид одежды.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
-    <h2 class="section-title">Для спортсменов</h2>
-    <div class="product-card">
+    <!-- Для спортсменов -->
+    <h2 class="section-title fade-up">Для спортсменов</h2>
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793024990479.jpg" alt="Подарок спортсмену" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/massager.jpg" alt="Массажер" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
-                <h3>Перкусионный массажёр</h3>
+                <h3>Перкуссионный массажёр</h3>
                 <p class="short">Эффективное средство для снятия мышечного напряжения</p>
             </div>
         </div>
-        <p class="product-desc">В комплекте 4 насадки для удобной проработки разных участков тела. 30 скоростей работы для индивидуального подбора комфортного режима массажа. Амплитуда 6 мм и темп 1800-3200 ударов в минуту для глубокого и эффективного массажа различных мышц</p>
+        <p class="product-desc">В комплекте 4 насадки для удобной проработки разных участков тела. 30 скоростей работы для индивидуального подбора комфортного режима массажа. Амплитуда 6 мм и темп 1800-3200 ударов в минуту для глубокого и эффективного массажа различных мышц.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
-    <div class="product-card">
+
+    <div class="product-card fade-up">
         <div class="product-top">
-            <img src="images/1793022902897.jpg" alt="Подарок спортсмену" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
+            <img src="images/roller.jpg" alt="Массажер роликовый" class="product-img" onerror="this.src='https://placehold.co/100x140/fdf0f2/c5002b?text=Фото'">
             <div class="product-info">
                 <h3>Роликовый антицеллюлитный массажёр</h3>
                 <p class="short">Эффективный самомассаж в домашних условиях</p>
             </div>
         </div>
-        <p class="product-desc">Обеспечивает антицеллюлитный эффект, способствует уменьшению жировых отложений в проблемных зонах и коррекции фигуры. При регулярном применении обеспечивает заметный лимфодренажный эффект: избавляет от отеков, выводя лишнюю жидкость из организма</p>
+        <p class="product-desc">Обеспечивает антицеллюлитный эффект, способствует уменьшению жировых отложений в проблемных зонах и коррекции фигуры. При регулярном применении обеспечивает заметный лимфодренажный эффект: избавляет от отеков, выводя лишнюю жидкость из организма.</p>
         <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order">Заказать подарок</a>
     </div>
 
-</div>
-
-<!-- CTA -->
-<div class="cta-block">
-    <h2>Не знаете, что выбрать?</h2>
-    <p>Напишите мне — я помогу подобрать идеальный подарок под ваш бюджет и получателя.</p>
-    <a href="https://t.me/faberlic_irina_by" target="_blank" class="cta-btn">Написать в Telegram</a>
-</div>
-
-<!-- МОДАЛЬНОЕ ОКНО ПОДАРКА -->
-<div id="gift-modal" onclick="closeGiftModal(event)">
-    <div class="gift-modal-content" onclick="event.stopPropagation()">
-        <button class="close-btn" onclick="closeGiftModal(event)">×</button>
-        <h2>Условия акции</h2>
-        
-        <!-- ЗДЕСЬ ВАШ ТЕКСТ УСЛОВИЙ! -->
-        <p>
-            🎉 <b>Дарю подарок за первый заказ!</b><br><br>
-            Зарегистрируйтесь на сайте по ссылке, оформите любой заказ на определенную сумму и получите приятный сюрприз от Faberlic абсолютно бесплатно!<br><br>
-            <i>Подарок выбирается автоматически при сборке заказа.</i>
-        </p>
-        
-        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" style="display: inline-block; background: #c5002b; color: #fff; padding: 12px 25px; border-radius: 20px; text-decoration: none; font-weight: 600;">Перейти к регистрации</a>
+    <!-- Блок с Telegram -->
+    <div class="fade-up" style="text-align: center; margin-top: 40px; padding: 20px; background: #fff; border-radius: 16px; border: 2px dashed #c5002b;">
+        <h3 style="font-size: 1.2em; margin-bottom: 10px;">Не знаете, что выбрать?</h3>
+        <p style="font-size: 0.95em; color: #555; margin-bottom: 15px;">Напишите мне — я помогу подобрать идеальный подарок под ваш бюджет и получателя.</p>
+        <a href="https://t.me/faberlic_irina_by" target="_blank" class="telegram-link">Написать в Telegram</a>
     </div>
 </div>
 
-<div class="footer">
-    <p>Связь со мной: <a href="https://instagram.com/irina_faberlic_help" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
+<!-- ВСПЛЫВАЮЩЕЕ ОКНО ПОДАРКА -->
+<div id="gift-modal">
+    <div>
+        <button class="close-btn" onclick="closeGiftModal()">×</button>
+        <h3>Условия акции</h3>
+        <p style="font-size: 1.1em; color: #c5002b; font-weight: 700; margin-bottom: 10px;">🎉 Дарю подарок за первый заказ!</p>
+        <p>Зарегистрируйтесь на сайте по ссылке, оформите любой заказ на определенную сумму и получите приятный сюрприз от Faberlic абсолютно бесплатно!</p>
+        <p style="font-style: italic; color: #888; font-size: 0.85em;">Подарок выбирается автоматически при сборке заказа.</p>
+        <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order" style="margin-top: 15px;">Перейти к регистрации</a>
+    </div>
+</div>
+
+<!-- ОКНО ВЫБОРА РЕГИОНА -->
+<div id="region-modal-overlay" onclick="closeRegionModal()"></div>
+<div id="region-modal">
+    <h3>Выберите ваш регион</h3>
+    <p>Для просмотра актуального каталога и цен, пожалуйста, выберите вашу страну:</p>
+    <div class="region-buttons">
+        <a href="#" id="btn-catalog-ru" target="_blank" class="region-btn">🇷🇺 Россия</a>
+        <a href="#" id="btn-catalog-by" target="_blank" class="region-btn">🇧🇾 Беларусь</a>
+    </div>
+    <button class="region-close-btn" onclick="closeRegionModal()">Отмена</button>
+</div>
+
+<!-- ФУТЕР -->
+    <div class="footer">
+    <p>Связь со мной: <a href="https://instagram.com/irina.faberlic.belarus" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
     <p style="margin-top: 10px;">&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
 </div>
 
 <div id="social-float">
-    <a href="https://instagram.com/irina_faberlic_help" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
+    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float" title="Instagram">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     </a>
     <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float" title="Telegram">
@@ -429,23 +304,21 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
     </a>
 </div>
 
+<!-- СКРИПТЫ -->
 <script src="config.js"></script>
 <script>
-    // 1. Логика меню
     function openMenu() { document.getElementById('side-menu').classList.add('open'); document.getElementById('menu-overlay').classList.add('open'); }
     function closeMenu() { document.getElementById('side-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.remove('open'); }
 
-    // 2. Окно с условиями подарка
     function openGiftModal() { 
         document.getElementById('gift-modal').classList.add('open'); 
-        document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+        document.body.style.overflow = 'hidden';
     }
     function closeGiftModal() { 
         document.getElementById('gift-modal').classList.remove('open'); 
-        document.body.style.overflow = ''; // Возвращаем прокрутку
+        document.body.style.overflow = '';
     }
 
-    // 3. Окно выбора региона (Россия/Беларусь)
     function openRegionModal(event) {
         if (event) event.preventDefault(); 
         document.getElementById('region-modal-overlay').classList.add('open');
@@ -456,9 +329,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         document.getElementById('region-modal').classList.remove('open');
     }
 
-    // 4. Анимации и подгрузка ссылок при загрузке страницы
     document.addEventListener("DOMContentLoaded", function() {
-        // Плавное появление блоков (fade-up)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -466,15 +337,14 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach((el) => { observer.observe(el); });
 
-        // Подстановка ссылок из config.js в окно выбора региона
         if (typeof CATALOG_LINKS !== 'undefined') {
             const btnRu = document.getElementById('btn-catalog-ru');
             if (btnRu) btnRu.href = CATALOG_LINKS.ru;
-
             const btnBy = document.getElementById('btn-catalog-by');
             if (btnBy) btnBy.href = CATALOG_LINKS.by;
         }
     });
 </script>
+
 </body>
 </html>
