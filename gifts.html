@@ -141,6 +141,49 @@
             .social-btn { width: 70px; height: 70px; }
             .social-btn svg { width: 40px; height: 40px; }
         }
+        /* --- ЖЕСТКОЕ УМЕНЬШЕНИЕ КНОПОК (ПЕРЕБИВАЕТ ВСЕ ОСТАЛЬНЫЕ СТИЛИ) --- */
+#social-float {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    z-index: 999 !important;
+}
+
+.social-btn {
+    width: 50px !important;  /* Размер кнопки */
+    height: 50px !important; /* Размер кнопки */
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+    text-decoration: none !important;
+}
+
+.social-btn svg {
+    width: 24px !important; /* Размер иконки */
+    height: 24px !important;
+    fill: #fff !important;
+}
+
+@media (max-width: 500px) {
+    #social-float {
+        bottom: 15px !important;
+        right: 10px !important;
+        gap: 8px !important;
+    }
+    .social-btn {
+        width: 45px !important; /* Еще меньше для мобильных */
+        height: 45px !important; 
+    }
+    .social-btn svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}
     </style>
 </head>
 <body>
