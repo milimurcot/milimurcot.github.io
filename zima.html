@@ -181,6 +181,56 @@
             .social-btn { width: 45px !important; height: 45px !important; }
             .social-btn svg { width: 22px !important; height: 22px !important; }
         }
+        /* --- МАКСИМАЛЬНО БОЛЬШИЕ ПЛАВАЮЩИЕ КНОПКИ --- */
+#social-float {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important; /* Расстояние между кнопками */
+    z-index: 9999 !important;
+}
+
+#social-float .social-btn {
+    width: 70px !important;  /* Размер самой кнопки */
+    height: 70px !important;
+    min-width: 70px !important;
+    min-height: 70px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4) !important;
+    transition: transform 0.3s ease !important;
+}
+
+#social-float .social-btn:hover {
+    transform: scale(1.1) !important;
+}
+
+#social-float .social-btn svg {
+    width: 36px !important; /* Размер иконки внутри */
+    height: 36px !important;
+    fill: #fff !important;
+}
+
+/* Настройки для телефонов (чтобы точно были большими и не слишком закрывали экран) */
+@media (max-width: 500px) {
+    #social-float {
+        bottom: 15px !important;
+        right: 10px !important;
+        gap: 12px !important;
+    }
+    #social-float .social-btn {
+        width: 60px !important;  /* На телефоне чуть меньше, но всё равно большие */
+        height: 60px !important;
+    }
+    #social-float .social-btn svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
     </style>
 </head>
 <body>
