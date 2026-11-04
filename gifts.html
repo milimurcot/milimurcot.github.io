@@ -141,32 +141,55 @@
             .social-btn { width: 70px; height: 70px; }
             .social-btn svg { width: 40px; height: 40px; }
         }
-        /* --- ЖЕСТКОЕ УМЕНЬШЕНИЕ КНОПОК (ПЕРЕБИВАЕТ ВСЕ ОСТАЛЬНЫЕ СТИЛИ) --- */
+        /* --- БОЛЬШИЕ ПЛАВАЮЩИЕ КНОПКИ --- */
 #social-float {
     position: fixed !important;
     bottom: 20px !important;
     right: 15px !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
-    z-index: 999 !important;
+    gap: 15px !important;
+    z-index: 9999 !important;
 }
 
-.social-btn {
-    width: 50px !important;  /* Размер кнопки */
-    height: 50px !important; /* Размер кнопки */
+#social-float .social-btn {
+    width: 65px !important;  /* Размер для компьютера */
+    height: 65px !important;
+    min-width: 65px !important;
+    min-height: 65px !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
-    text-decoration: none !important;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4) !important;
+    transition: transform 0.3s ease !important;
 }
 
-.social-btn svg {
-    width: 24px !important; /* Размер иконки */
-    height: 24px !important;
+#social-float .social-btn:hover {
+    transform: scale(1.1) !important;
+}
+
+#social-float .social-btn svg {
+    width: 32px !important; /* Размер иконки внутри */
+    height: 32px !important;
     fill: #fff !important;
+}
+
+/* Настройки для мобильных телефонов */
+@media (max-width: 500px) {
+    #social-float {
+        bottom: 15px !important;
+        right: 10px !important;
+        gap: 12px !important;
+    }
+    #social-float .social-btn {
+        width: 50px !important;  /* Размер для телефона */
+        height: 50px !important;
+    }
+    #social-float .social-btn svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
 }
 
 @media (max-width: 500px) {
