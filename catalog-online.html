@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: Оптимизируем заголовок под поиск -->
+    <title>Каталог Faberlic онлайн (Актуальный) | Ирина — консультант</title>
+    <meta name="description" content="Листайте актуальный каталог Faberlic онлайн прямо на сайте. Новинки, хиты, скидка 20% на первый заказ. Доставка по Беларуси и РФ.">
+    
+    <link rel="canonical" href="https://irina-faberlic.com/catalog-online.html">
+    <meta property="og:title" content="Каталог Faberlic онлайн | Ирина">
+    <meta property="og:url" content="https://irina-faberlic.com/catalog-online.html">
+    <link rel="icon" type="image/png" href="2471.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Подключаем библиотеку для эффекта перелистывания -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        /* --- АНИМАЦИИ --- */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- БОКОВОЕ МЕНЮ (сокращено для примера, вставьте свой полный код меню) --- */
+        #menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        #side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s; padding: 60px 20px 25px; overflow-y: auto; }
+        #side-menu.open { right: 0; }
+        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 32px; color: #c5002b; cursor: pointer; }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #menu-overlay.open { opacity: 1; pointer-events: auto; }
+        /* Вставьте сюда остальные стили меню из вашего index.html */
+
+        /* --- ЗАГОЛОВОК --- */
+        .page-hero { background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%); padding: 80px 20px 50px; text-align: center; border-bottom: 3px solid #c5002b; }
+        .page-hero h1 { font-size: 2em; margin-bottom: 10px; }
+        .page-hero p { color: #555; font-size: 1.05em; }
+
+        /* --- СТИЛИ ДЛЯ КАТАЛОГА (SWIPER) --- */
+        .catalog-wrapper { padding: 20px 0; }
+        .swiper { width: 100%; height: 70vh; max-height: 600px; padding-bottom: 40px; }
+        .swiper-slide { 
+            background-position: center; 
+            background-size: cover; 
+            width: 90%; /* Ширина страницы каталога */
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        /* Картинки внутри страниц */
+        .swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Кнопки навигации */
+        .swiper-button-next, .swiper-button-prev { color: #c5002b !important; background: rgba(255,255,255,0.8); width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .swiper-button-next:after, .swiper-button-prev:after { font-size: 18px !important; font-weight: bold; }
+        .swiper-pagination-bullet-active { background: #c5002b !important; }
+
+        /* --- КНОПКА ЗАКАЗА --- */
+        .btn-order-main { display: block; width: 100%; max-width: 400px; margin: 20px auto; background: #c5002b; color: #fff; padding: 16px; border-radius: 25px; font-weight: 700; font-size: 1.1em; text-align: center; text-decoration: none; box-shadow: 0 4px 15px rgba(197,0,43,0.3); transition: 0.3s; }
+        .btn-order-main:hover { background: #a00022; transform: translateY(-2px); }
+
+        /* --- ФУТЕР И ПЛАВАЮЩИЕ КНОПКИ (вставьте свои полные стили) --- */
+        .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; position: relative; z-index: 10; }
+        .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
+        #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+        .social-btn { width: 50px !important; height: 50px !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
+        .social-btn svg { width: 24px !important; height: 24px !important; fill: #fff; }
+        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        #telegram-float { background-color: #0088cc; }
+    </style>
+</head>
+<body>
+
+<!-- МЕНЮ -->
+<button id="menu-btn" onclick="openMenu()">☰</button>
+<div id="menu-overlay" onclick="closeMenu()"></div>
+<nav id="side-menu">
+    <button id="menu-close" onclick="closeMenu()">×</button>
+    <a href="catalog-online.html" style="background: #0d1b2a; color: #fff; padding: 15px; display: block; text-align: center; border-radius: 10px; margin-bottom: 20px; text-decoration: none; font-weight: bold;">📖 Листать каталог онлайн</a>
+    
+    <div style="margin-bottom: 20px;">
+        <h4 style="font-size: 0.8em; color: #888; margin-bottom: 10px;">РАЗДЕЛЫ</h4>
+        <a href="index.html" style="display: block; padding: 10px; text-decoration: none; color: #333; background: #faf8f5; border-radius: 8px; margin-bottom: 5px;">🏠 Главная</a>
+        <a href="gifts.html" style="display: block; padding: 10px; text-decoration: none; color: #333; background: #faf8f5; border-radius: 8px; margin-bottom: 5px;">🎁 Подарки</a>
+        <!-- Добавьте остальные ссылки -->
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="page-hero fade-up">
+    <h1>Каталог Faberlic</h1>
+    <p>Листайте актуальный каталог прямо на сайте</p>
+</div>
+
+<!-- БЛОК С КАТАЛОГОМ (SWIPER) -->
+<div class="container catalog-wrapper fade-up">
+    
+    <p style="text-align: center; margin-bottom: 20px; color: #666; font-size: 0.9em;">
+        Листайте пальцем влево или вправо, чтобы перевернуть страницу. Для заказа регистрируйтесь по кнопке ниже.
+    </p>
+
+    <!-- Слайдер -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Страница 1 -->
+            <div class="swiper-slide">
+                <img src="https://placehold.co/600x800/fdf0f2/c5002b?text=Страница+1+(Обложка)" alt="Каталог Faberlic стр 1">
+            </div>
+            <!-- Страница 2 -->
+            <div class="swiper-slide">
+                <img src="https://placehold.co/600x800/fff/333?text=Страница+2" alt="Каталог Faberlic стр 2">
+            </div>
+            <!-- Страница 3 -->
+            <div class="swiper-slide">
+                <img src="https://placehold.co/600x800/fff/333?text=Страница+3" alt="Каталог Faberlic стр 3">
+            </div>
+            <!-- Страница 4 -->
+            <div class="swiper-slide">
+                <img src="https://placehold.co/600x800/fff/333?text=Страница+4" alt="Каталог Faberlic стр 4">
+            </div>
+        </div>
+        
+        <!-- Навигация и пагинация -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Кнопка заказа -->
+    <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order-main">Зарегистрироваться и заказать</a>
+
+</div>
+
+<!-- ФУТЕР -->
+<div class="footer">
+    <p>Связь со мной: <a href="https://instagram.com/irina.faberlic.belarus" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
+    <p style="margin-top: 10px;">&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
+</div>
+
+<div id="social-float">
+    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+
+<!-- ПОДКЛЮЧАЕМ СКРИПТЫ -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="config.js"></script>
+<script>
+    // Скрипт для меню
+    function openMenu() { document.getElementById('side-menu').classList.add('open'); document.getElementById('menu-overlay').classList.add('open'); }
+    function closeMenu() { document.getElementById('side-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.remove('open'); }
+
+    // Скрипт для анимации появления
+    document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach((el) => { observer.observe(el); });
+    });
+
+    // Инициализация каталога (Swiper) с 3D-эффектом
+    var swiper = new Swiper(".mySwiper", {
+        effect: "flip", // Эффект перелистывания страниц
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction", // Показывает страницы как "1/5"
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+</body>
+</html>
