@@ -1,0 +1,21 @@
+{
+  "name": "Ирина - Красота и Подарки",
+  "short_name": "Ирина Beauty",
+  "description": "Каталог Faberlic, подарки, уход и консультации от Ирины",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#c5002b",
+  "icons": [
+    {
+      "src": "2471.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "2471.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
