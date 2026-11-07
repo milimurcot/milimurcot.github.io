@@ -14,7 +14,15 @@
     <meta name="yandex-verification" content="62d2c2b35cb5b646" />
     <meta charset="UTF-8">
     <meta  name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ирина - консультант Faberlic | Каталог продукции | Скидка 20%</title>
+   <!-- НАСТРОЙКИ PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c5002b">
+<!-- Для iOS (iPhone) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Ирина Beauty">
+<link rel="apple-touch-icon" href="2471.png">
+  <title>Ирина - консультант Faberlic | Каталог продукции | Скидка 20%</title>
    <meta property="og:locale" content="ru_RU">
   <meta name="description" content="Сайт Фаберлик. Регистрация онлайн, актуальный каталог, скидки до 26%. Подбор косметики, парфюмерии и БАДов от консультанта Ирины. Бесплатная регистрация! Личный кабинет!">
     <meta name="keywords" content="фаберлик, консультант фаберлик, каталог фаберлик, регистрация фаберлик, скидка фаберлик, продукция фаберлик, парфюмерия, бады, Ирина">
@@ -558,5 +566,19 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
     <button class="region-close-btn" onclick="closeRegionModal()">Отмена</button>
 </div>
+<!-- РЕГИСТРАЦИЯ SERVICE WORKER ДЛЯ PWA -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+          console.log('ServiceWorker успешно зарегистрирован!');
+        })
+        .catch(err => {
+          console.log('Ошибка при регистрации ServiceWorker:', err);
+        });
+    });
+  }
+</script>
 </body>
 </html>
