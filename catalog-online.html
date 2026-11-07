@@ -3,211 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог Faberlic онлайн (РФ и РБ) | Ирина — консультант</title>
-    <meta name="description" content="Листайте актуальный каталог Faberlic онлайн прямо на сайте. Выберите каталог для России или Беларуси. Скидка 20% на первый заказ.">
+    <title>Каталог Faberlic онлайн | Ирина — консультант</title>
+    <meta name="description" content="Листайте актуальный каталог Faberlic онлайн. Выберите каталог для России или Беларуси.">
     
     <link rel="canonical" href="https://irina-faberlic.com/catalog-online.html">
-    <meta property="og:title" content="Каталог Faberlic онлайн | Ирина">
-    <meta property="og:url" content="https://irina-faberlic.com/catalog-online.html">
     <link rel="icon" type="image/png" href="2471.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: #c5002b; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 15px; }
 
-        /* --- АНИМАЦИИ --- */
-        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-        /* --- БОКОВОЕ МЕНЮ (вставьте ваш полный код стилей меню) --- */
-        #menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        #side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s; padding: 60px 20px 25px; overflow-y: auto; }
-        #side-menu.open { right: 0; }
-        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 32px; color: #c5002b; cursor: pointer; }
-        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
-        #menu-overlay.open { opacity: 1; pointer-events: auto; }
+        /* --- КНОПКА "НА ГЛАВНУЮ" --- */
+        .back-link { 
+            display: inline-block; 
+            color: #c5002b; 
+            text-decoration: none; 
+            font-weight: 600; 
+            margin-bottom: 20px; 
+            background: #fff; 
+            padding: 10px 20px; 
+            border-radius: 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            transition: 0.3s; 
+            border: 2px solid transparent;
+        }
+        .back-link:hover { 
+            background: #fdf0f2; 
+            border-color: #c5002b;
+        }
 
         /* --- ЗАГОЛОВОК --- */
-        .page-hero { background: linear-gradient(135deg, #fff 0%, #fdf0f2 100%); padding: 80px 20px 50px; text-align: center; border-bottom: 3px solid #c5002b; }
-        .page-hero h1 { font-size: 2em; margin-bottom: 10px; }
-        .page-hero p { color: #555; font-size: 1.05em; }
+        .page-hero { text-align: center; margin-bottom: 20px; padding-top: 20px; }
+        .page-hero h1 { font-family: 'Playfair Display', serif; color: #c5002b; font-size: 1.8em; margin-bottom: 5px; }
+        .page-hero p { color: #555; font-size: 0.95em; }
 
-        /* --- ПЕРЕКЛЮЧАТЕЛЬ РЕГИОНОВ --- */
-        .region-switcher {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0 30px;
-        }
+        /* --- ПЕРЕКЛЮЧАТЕЛЬ --- */
+        .region-switcher { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
         .region-btn {
-            flex: 1;
-            max-width: 200px;
-            padding: 15px 20px;
-            border-radius: 12px;
-            border: 2px solid #fdf0f2;
-            background: #fff;
-            color: #1a1a1a;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
+            flex: 1; max-width: 200px; padding: 12px; border-radius: 12px;
+            border: 2px solid #fdf0f2; background: #fff; color: #1a1a1a;
+            font-size: 0.95em; font-weight: 600; cursor: pointer; transition: 0.3s;
+            font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 5px;
         }
-        .region-btn:hover {
-            border-color: #c5002b;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(197,0,43,0.1);
-        }
-        .region-btn.active {
-            background: #c5002b;
-            color: #fff;
-            border-color: #c5002b;
-            box-shadow: 0 6px 20px rgba(197,0,43,0.3);
-        }
-        .region-btn .flag { font-size: 1.5em; }
+        .region-btn:hover { border-color: #c5002b; transform: translateY(-2px); }
+        .region-btn.active { background: #c5002b; color: #fff; border-color: #c5002b; }
+        .region-btn .flag { font-size: 1.4em; }
 
-        /* --- КОНТЕЙНЕР ДЛЯ КАТАЛОГА (IFRAME) --- */
+        /* --- КАТАЛОГ --- */
         .catalog-wrapper {
-            display: none; /* По умолчанию скрыты */
-            position: relative;
-            width: 100%;
-            padding-bottom: 130%; /* Пропорции для мобильных */
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            margin-bottom: 30px;
-            background: #fff;
+            display: none; position: relative; width: 100%; padding-bottom: 130%; 
+            height: 0; overflow: hidden; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin-bottom: 20px; background: #fff;
         }
-        .catalog-wrapper.active {
-            display: block; /* Показываем выбранный */
-            animation: fadeIn 0.5s ease;
-        }
-        .catalog-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .catalog-wrapper.active { display: block; animation: fadeIn 0.5s ease; }
+        .catalog-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* На широких экранах (ПК) делаем пропорции шире */
-        @media (min-width: 768px) {
-            .catalog-wrapper { padding-bottom: 75%; }
-        }
+        @media (min-width: 768px) { .catalog-wrapper { padding-bottom: 75%; } }
 
         /* --- КНОПКА ЗАКАЗА --- */
-        .btn-order-main { display: block; width: 100%; max-width: 400px; margin: 0 auto; background: #c5002b; color: #fff; padding: 16px; border-radius: 25px; font-weight: 700; font-size: 1.1em; text-align: center; text-decoration: none; box-shadow: 0 4px 15px rgba(197,0,43,0.3); transition: 0.3s; }
+        .btn-order-main { 
+            display: block; width: 100%; max-width: 400px; margin: 0 auto; 
+            background: #c5002b; color: #fff; padding: 16px; border-radius: 25px; 
+            font-weight: 700; font-size: 1.1em; text-align: center; text-decoration: none; 
+            box-shadow: 0 4px 15px rgba(197,0,43,0.3); transition: 0.3s; 
+        }
         .btn-order-main:hover { background: #a00022; transform: translateY(-2px); }
-
-        /* --- ФУТЕР И ПЛАВАЮЩИЕ КНОПКИ (вставьте ваши полные стили) --- */
-        .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 20px; position: relative; z-index: 10; }
-        .footer a { color: #f5c2c7; text-decoration: none; margin: 0 5px; }
-        #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
-        .social-btn { width: 50px !important; height: 50px !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
-        .social-btn svg { width: 24px !important; height: 24px !important; fill: #fff; }
-        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        #telegram-float { background-color: #0088cc; }
     </style>
 </head>
 <body>
 
-<!-- МЕНЮ -->
-<button id="menu-btn" onclick="openMenu()">☰</button>
-<div id="menu-overlay" onclick="closeMenu()"></div>
-<nav id="side-menu">
-    <button id="menu-close" onclick="closeMenu()">×</button>
-    <a href="catalog-online.html" style="background: #0d1b2a; color: #fff; padding: 15px; display: block; text-align: center; border-radius: 10px; margin-bottom: 20px; text-decoration: none; font-weight: bold;">📖 Листать каталог</a>
-    <!-- Вставьте остальные пункты меню -->
-</nav>
-
-<!-- ЗАГОЛОВОК -->
-<div class="page-hero fade-up">
-    <h1>Каталог Faberlic</h1>
-    <p>Выберите ваш регион для просмотра актуального каталога</p>
-</div>
-
-<!-- БЛОК С КАТАЛОГОМ -->
-<div class="container fade-up">
+<div class="container">
     
+    <!-- Кнопка возврата -->
+    <a href="index.html" class="back-link">← Вернуться на главную</a>
+
+    <!-- Заголовок -->
+    <div class="page-hero">
+        <h1>Каталог Faberlic</h1>
+        <p>Выберите ваш регион</p>
+    </div>
+
     <!-- Переключатель -->
     <div class="region-switcher">
         <button id="btn-ru" class="region-btn active" onclick="showCatalog('ru')">
-            <span class="flag">🇷🇺</span>
-            Каталог РФ
+            <span class="flag">🇷🇺</span> Каталог РФ
         </button>
         <button id="btn-by" class="region-btn" onclick="showCatalog('by')">
-            <span class="flag">🇧🇾</span>
-            Каталог РБ
+            <span class="flag">🇧🇾</span> Каталог РБ
         </button>
     </div>
 
-    <!-- КАТАЛОГ РОССИИ -->
+    <!-- КАТАЛОГ РОССИИ (Вставьте сюда ссылку из src) -->
     <div id="catalog-ru" class="catalog-wrapper active">
-        <!-- ВСТАВЬТЕ СЮДА ВАШУ ССЫЛКУ ИЗ HEYZINE ДЛЯ РФ -->
         <iframe src="https://heyzine.com/flip-book/061050696c.html" allowfullscreen allow="clipboard-write" scrolling="no"></iframe>
     </div>
 
-    <!-- КАТАЛОГ БЕЛАРУСИ -->
+    <!-- КАТАЛОГ БЕЛАРУСИ (Вставьте сюда ссылку из src) -->
     <div id="catalog-by" class="catalog-wrapper">
-        <!-- ВСТАВЬТЕ СЮДА ВАШУ ССЫЛКУ ИЗ HEYZINE ДЛЯ РБ -->
         <iframe src="https://heyzine.com/flip-book/8039c07c86.html" allowfullscreen allow="clipboard-write" scrolling="no"></iframe>
     </div>
 
-    <p style="text-align: center; margin-bottom: 20px; color: #666; font-size: 0.9em;">
-        Не нашли нужный товар? Напишите мне в Telegram, я помогу его найти и оформить заказ со скидкой 20%.
+    <p style="text-align: center; margin-bottom: 15px; color: #666; font-size: 0.9em;">
+        Не нашли нужный товар? Напишите мне в Telegram.
     </p>
 
+    <!-- Кнопка регистрации -->
     <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-order-main">Зарегистрироваться и заказать</a>
 
 </div>
 
-<!-- ФУТЕР -->
-<div class="footer">
-    <p>Связь со мной: <a href="https://instagram.com/irina_faberlic_help" target="_blank">Instagram</a> | <a href="https://t.me/faberlic_irina_by" target="_blank">Telegram</a></p>
-    <p style="margin-top: 10px;">&copy; 2026. Продукция Faberlic. Сайт консультанта.</p>
-</div>
-
-<!-- ПЛАВАЮЩИЕ КНОПКИ (SVG код вставьте ваш) -->
-<div id="social-float">
-    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float"></a>
-    <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float"></a>
-</div>
-
-<script src="config.js"></script>
 <script>
-    // Меню
-    function openMenu() { document.getElementById('side-menu').classList.add('open'); document.getElementById('menu-overlay').classList.add('open'); }
-    function closeMenu() { document.getElementById('side-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.remove('open'); }
-
-    // Логика переключения каталогов
     function showCatalog(region) {
-        // 1. Скрываем все каталоги
         document.getElementById('catalog-ru').classList.remove('active');
         document.getElementById('catalog-by').classList.remove('active');
-        
-        // 2. Убираем активный класс со всех кнопок
         document.getElementById('btn-ru').classList.remove('active');
         document.getElementById('btn-by').classList.remove('active');
 
-        // 3. Включаем нужный каталог и кнопку
         if (region === 'ru') {
             document.getElementById('catalog-ru').classList.add('active');
             document.getElementById('btn-ru').classList.add('active');
@@ -216,16 +132,6 @@
             document.getElementById('btn-by').classList.add('active');
         }
     }
-
-    // Анимация появления
-    document.addEventListener("DOMContentLoaded", function() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach((el) => { observer.observe(el); });
-    });
 </script>
 
 </body>
