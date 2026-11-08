@@ -150,6 +150,73 @@
     line-height: 1;
     text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
+    /* --- СТИЛИ ДЛЯ ОКНА ЦЕНЫ --- */
+.price-modal-overlay {
+    display: none; /* По умолчанию скрыто */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 4000;
+    align-items: center;
+    justify-content: center;
+}
+.price-modal-content {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.price-modal-content h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #c5002b;
+}
+.price-modal-content p {
+    font-size: 0.95em;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.price-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.btn-modal-login {
+    background: #c5002b;
+    color: #fff;
+    padding: 14px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.btn-modal-login:hover { background: #a00022; }
+.btn-modal-cancel {
+    background: #fdf0f2;
+    color: #c5002b;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-modal-cancel:hover { background: #fce4e8; }
+.dont-show-again {
+    font-size: 0.8em;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
@@ -359,11 +426,67 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+// Логика окна предупреждения о цене
+document.addEventListener("DOMContentLoaded", function() {
+    const priceBtns = document.querySelectorAll('.price-link-btn');
+    const priceModal = document.getElementById('price-modal');
+    const dontShowCheckbox = document.getElementById('dont-show-again');
+    const btnLogin = document.getElementById('btn-goto-login');
+    let currentTargetUrl = '';
+
+    // Вешаем клик на все кнопки с ценой
+    priceBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Если пользователь уже нажимал "не показывать", пропускаем клик (ссылка сработает сама)
+            if (localStorage.getItem('hidePriceModal') === 'true') {
+                return; 
+            }
+            
+            // Иначе отменяем переход и показываем окно
+            e.preventDefault();
+            currentTargetUrl = this.href;
+            priceModal.style.display = 'flex';
+        });
+    });
+
+    // Кнопка "Войти / Зарегистрироваться" внутри окна
+    btnLogin.addEventListener('click', function() {
+        // Если человек поставил галочку, запоминаем это в браузере
+        if (dontShowCheckbox.checked) {
+            localStorage.setItem('hidePriceModal', 'true');
+        }
+        // Переходим на сайт Faberlic (ссылка уже прописана в кнопке btnLogin)
+        // Окно закроется само при переходе
+    });
+
+    // Функция закрытия окна (глобальная, чтобы работала по onclick)
+    window.closePriceModal = function() {
+        priceModal.style.display = 'none';
+    }
+});
 </script>
 <!-- ОКНО ДЛЯ ПРОСМОТРА ФОТО -->
 <div id="image-modal" class="image-modal">
     <span class="close-modal">&times;</span>
     <img id="modal-img" src="" alt="Увеличенное фото">
+</div>
+<!-- ОКНО ПРЕДУПРЕЖДЕНИЯ О ЦЕНЕ -->
+<div id="price-modal" class="price-modal-overlay">
+    <div class="price-modal-content">
+        <h3>Внимание!</h3>
+        <p>Актуальные цены со скидкой 20% и наличие товара доступны только авторизованным пользователям в личном кабинете Faberlic.</p>
+        
+        <div class="price-modal-buttons">
+            <a href="https://faberlic.com/register?sponsornumber=744653782&lang=ru&r=1000318652091" target="_blank" class="btn-modal-login" id="btn-goto-login">
+                Войти / Зарегистрироваться
+            </a>
+            <button class="btn-modal-cancel" onclick="closePriceModal()">Отмена</button>
+        </div>
+        
+        <label class="dont-show-again">
+            <input type="checkbox" id="dont-show-again"> У меня уже есть аккаунт (больше не показывать)
+        </label>
+    </div>
 </div>
 </body>
 </html>                              
