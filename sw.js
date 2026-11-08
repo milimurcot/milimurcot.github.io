@@ -1,11 +1,12 @@
-const CACHE_NAME = 'irina-app-v4';
+const CACHE_NAME = 'irina-app-v5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './catalog-online.html',
   './zima.html',
   './gifts.html',
-  './2471.png'
+  './2471.png',
+  './bads html'
 ];
 
 // Установка: сохраняем основные файлы в кэш
