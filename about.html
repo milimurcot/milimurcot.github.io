@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне | Ирина — консультант Faberlic</title>
+    <link rel="icon" type="image/png" href="2471.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #faf8f5; color: #1a1a1a; line-height: 1.7; }
+        .container { max-width: 700px; margin: 0 auto; padding: 30px 20px; }
+        h1 { font-family: 'Playfair Display', serif; color: #c5002b; font-size: 2em; margin-bottom: 20px; text-align: center; }
+        p { font-size: 1em; color: #333; margin-bottom: 15px; }
+        .back-link { display: inline-block; color: #c5002b; text-decoration: none; font-weight: 600; margin-bottom: 20px; background: #fff; padding: 8px 16px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+
+        /* --- МЕНЮ --- */
+        #menu-btn { position: fixed; top: 15px; right: 15px; width: 52px; height: 52px; background-color: #c5002b; color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(197, 0, 43, 0.4); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        #side-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100%; background: #fff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1001; transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); padding: 60px 20px 25px; overflow-y: auto; }
+        #side-menu.open { right: 0; }
+        #menu-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 32px; color: #c5002b; cursor: pointer; }
+        #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #menu-overlay.open { opacity: 1; pointer-events: auto; }
+        .catalog-btn { display: block; background: linear-gradient(135deg, #c5002b 0%, #a00022 100%); color: #fff; font-weight: 700; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-bottom: 25px; font-size: 0.95em; }
+        .menu-section { margin-bottom: 25px; }
+        .menu-title { font-size: 0.75em; color: #888; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .menu-grid a { background: #faf8f5; display: flex; flex-direction: column; align-items: center; padding: 12px 5px; border-radius: 12px; color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.75em; text-align: center; border: 1px solid #fdf0f2; }
+        .menu-grid a span { font-size: 1.6em; margin-bottom: 4px; }
+        .menu-grid a:hover { background: #c5002b; color: #fff; }
+
+        /* --- СОЦСЕТИ --- */
+        #social-float { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .social-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
+        .social-btn svg { width: 28px; height: 28px; fill: #fff; }
+        #instagram-float { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        #telegram-float { background-color: #0088cc; }
+
+        .footer { background-color: #1a1a1a; color: #fff; padding: 30px 20px; font-size: 0.85em; text-align: center; margin-top: 40px; line-height: 1.6; }
+        .footer a { color: #f5c2c7; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<button id="menu-btn" onclick="openMenu()">☰</button>
+<div id="menu-overlay" onclick="closeMenu()"></div>
+<nav id="side-menu">
+    <button id="menu-close" onclick="closeMenu()">×</button>
+    <a href="index.html" class="catalog-btn">📖 На главную</a>
+    <div class="menu-section">
+        <h4 class="menu-title">Покупателям</h4>
+        <div class="menu-grid">
+            <a href="index.html"><span>🏠</span> Главная</a>
+            <a href="zima.html"><span>❄️</span> Zima</a>
+            <a href="gifts.html"><span>🎄</span> Подарки</a>
+            <a href="care.html"><span>✨</span> Уход</a>
+            <a href="makeup.html"><span>💄</span> Косметика</a>
+            <a href="parfum.html"><span>🌸</span> Парфюм</a>
+            <a href="men.html"><span>🧔</span> Мужчинам</a>
+            <a href="bads.html"><span>💊</span> БАДы</a>
+            <a href="kids.html"><span>🧸</span> Детям</a>
+            <a href="home.html"><span>🧼</span> Для дома</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <a href="index.html" class="back-link">← На главную</a>
+    <h1>Обо мне</h1>
+    <p>Здравствуйте! Меня зовут <strong>Ирина</strong>. Я являюсь <strong>независимым консультантом</strong> компании Faberlic и работаю в городе Лепель (Беларусь).</p>
+    <p><strong>Важное уточнение:</strong> Данный сайт является моим личным информационным ресурсом и каталогом. Я не являюсь официальным представительством компании Faberlic, и этот сайт не является официальным сайтом бренда.</p>
+    <p>Моя задача — помогать клиентам подбирать качественную косметику, парфюмерию и товары для дома. Все заказы оформляются через официальный портал Faberlic, что гарантирует безопасность покупки.</p>
+    <p>Связаться со мной можно по электронной почте: <strong>irina.faberlic@mail.ru</strong>.</p>
+</div>
+
+<div id="social-float">
+    <a href="https://instagram.com/irina.faberlic.belarus" target="_blank" class="social-btn" id="instagram-float">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://t.me/faberlic_irina_by" target="_blank" class="social-btn" id="telegram-float">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+</div>
+
+<div class="footer">
+    <p style="margin-bottom: 10px;">
+        <strong>Ирина</strong> — независимый консультант Faberlic.<br>
+        Город: Лепель, Беларусь. Email: <a href="mailto:irina.faberlic@mail.ru">irina.faberlic@mail.ru</a>
+    </p>
+    <p style="margin-bottom: 15px;">
+        <a href="privacy.html">Политика конфиденциальности</a> | 
+        <a href="about.html">Обо мне</a> | 
+        <a href="delivery.html">Доставка и оплата</a>
+    </p>
+    <p style="color: #888;">Сайт не является официальным сайтом компании Faberlic. &copy; 2026.</p>
+</div>
+
+<script>
+    function openMenu() { document.getElementById('side-menu').classList.add('open'); document.getElementById('menu-overlay').classList.add('open'); }
+    function closeMenu() { document.getElementById('side-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.remove('open'); }
+</script>
+
+</body>
+</html>
