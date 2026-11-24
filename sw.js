@@ -1,4 +1,4 @@
-const CACHE_NAME = 'irina-app-v17';
+const CACHE_NAME = 'irina-app-v18';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
